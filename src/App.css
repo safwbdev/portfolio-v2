@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.intro-section {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.intro-section .inner-text {
+  text-align: center;
+  color: #ffffff;
+}
+.intro-section .inner-text h1 {
+  font-size: 5rem;
+}
+.intro-section .inner-text h2 {
+  font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.main-bg {
+  background-image: linear-gradient(0deg, rgb(59, 59, 59), rgb(197, 197, 197)),
+    linear-gradient(
+      45deg,
+      rgb(159, 116, 214) 0%,
+      rgb(159, 116, 214) 25%,
+      rgb(130, 95, 173) 25%,
+      rgb(130, 95, 173) 45%,
+      rgb(101, 74, 132) 45%,
+      rgb(101, 74, 132) 50%,
+      rgb(72, 54, 90) 50%,
+      rgb(72, 54, 90) 52%,
+      rgb(43, 33, 49) 52%,
+      rgb(43, 33, 49) 61%,
+      rgb(14, 12, 8) 61%,
+      rgb(14, 12, 8) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgb(159, 116, 214) 0%,
+      rgb(159, 116, 214) 25%,
+      rgb(130, 95, 173) 25%,
+      rgb(130, 95, 173) 45%,
+      rgb(101, 74, 132) 45%,
+      rgb(101, 74, 132) 50%,
+      rgb(72, 54, 90) 50%,
+      rgb(72, 54, 90) 52%,
+      rgb(43, 33, 49) 52%,
+      rgb(43, 33, 49) 61%,
+      rgb(14, 12, 8) 61%,
+      rgb(14, 12, 8) 100%
+    );
+  background-blend-mode: overlay, overlay, normal;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.desc-section {
+  background-image: url("https://safwbdev.netlify.app/static/media/desc_bg.25374c6a.jpeg");
+  /* background: red; */
+  position: absolute;
+  bottom: 0;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+}
+.desc-section h6 {
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 11px 1px 6px #000;
 }
