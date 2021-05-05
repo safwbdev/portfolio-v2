@@ -8,6 +8,24 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Future from "./components/Future";
 import sanityClient from "./client.js";
+import {
+  PROFILE_QUERY,
+  ESSENTIAL_QUERY,
+  TECHNICAL_QUERY,
+  FRAMEWORK_QUERY,
+  LIBRARY_QUERY,
+  DATABASE_QUERY,
+  CMS_QUERY,
+  OS_QUERY,
+  TOOLS_QUERY,
+  WORK_QUERY,
+  DESIGN_QUERY,
+  EDUCATION_QUERY,
+  FUTURE_QUERY,
+  LEARNING_QUERY,
+} from "./constants/queries";
+
+import { PROFILE_LOADING } from "./constants/lang";
 
 function App() {
   const [mainData, setMain] = useState(null);
@@ -28,205 +46,95 @@ function App() {
   useEffect(() => {
     //MAIN
     sanityClient
-      .fetch(
-        `*[_type == "user"]{
-          name,
-          role,
-          phone,
-          email,
-          location,
-          githubLink,
-          linkedInlink,
-          desc,
-          userImage{
-            asset->{
-                _id,
-                url
-            },
-            alt
-          }         
-      }`
-      )
+      .fetch(PROFILE_QUERY)
       .then((data) => setMain(data))
       .catch(console.error);
 
-    //TECHNICAL SKILLS
+    //Essential SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "essential"]{
-            name,
-            icon,
-            skillType
-        }`
-      )
+      .fetch(ESSENTIAL_QUERY)
       .then((data) => setEssential(data))
       .catch(console.error);
 
     //TECHNICAL SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "technical"]{
-            name,
-            icon,
-            skillType
-        }`
-      )
+      .fetch(TECHNICAL_QUERY)
       .then((data) => setTechnical(data))
       .catch(console.error);
 
     //FRAMEWORK SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "framework"]{
-              name,
-              icon,
-              skillType
-          }`
-      )
+      .fetch(FRAMEWORK_QUERY)
       .then((data) => setFramework(data))
       .catch(console.error);
 
     //LIBARIES SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "library"]{
-              name,
-              icon,
-              skillType
-          }`
-      )
+      .fetch(LIBRARY_QUERY)
       .then((data) => setLibrary(data))
       .catch(console.error);
 
     //OS SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "os"]{
-              name,
-              icon,
-              skillType
-          }`
-      )
+      .fetch(OS_QUERY)
       .then((data) => setOs(data))
       .catch(console.error);
 
     //CMS SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "cms"]{
-              name,
-              icon,
-              skillType
-          }`
-      )
+      .fetch(CMS_QUERY)
       .then((data) => setCms(data))
       .catch(console.error);
 
     //DESIGN SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "design"]{
-              name,
-              icon,
-              skillType
-          }`
-      )
+      .fetch(DESIGN_QUERY)
       .then((data) => setDesign(data))
       .catch(console.error);
 
     //DATABASE SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "database"]{
-              name,
-              icon,
-              skillType
-          }`
-      )
+      .fetch(DATABASE_QUERY)
       .then((data) => setDatabase(data))
       .catch(console.error);
 
     //TOOLS SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "skills" && skillType == "tools"]{
-              name,
-              icon,
-              skillType
-          }`
-      )
+      .fetch(TOOLS_QUERY)
       .then((data) => setTools(data))
       .catch(console.error);
 
-    //FUTURE SKILLS
+    //LEARNING SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "future" && skillStatus == "learning"]{
-              name
-          }`
-      )
+      .fetch(LEARNING_QUERY)
       .then((data) => setLearning(data))
       .catch(console.error);
 
     //FUTURE SKILLS
     sanityClient
-      .fetch(
-        `*[_type == "future" && skillStatus == "future"]{
-              name
-          }`
-      )
+      .fetch(FUTURE_QUERY)
       .then((data) => setFuture(data))
       .catch(console.error);
 
     //WORK
     sanityClient
-      .fetch(
-        `*[_type == "work"]{
-            companyName,
-            role,
-            startDate,
-            endDate,
-            tasks,
-            companyImage{
-              asset->{
-                  _id,
-                  url
-              },
-              alt
-            }
-      }`
-      )
+      .fetch(WORK_QUERY)
       .then((data) => setWork(data))
       .catch(console.error);
 
     //EDUCATION
     sanityClient
-      .fetch(
-        `*[_type == "education"]{
-              schoolName,
-              field,
-              location,
-              startDate,
-              endDate,
-              eduImage{
-                asset->{
-                    _id,
-                    url
-                },
-                alt
-              }
-        }`
-      )
+      .fetch(EDUCATION_QUERY)
       .then((data) => setEdu(data))
       .catch(console.error);
   }, []);
 
-  // console.log(technicalData);
-
   return (
     <div className="App">
-      {!mainData ? (
-        <h1>Loading...</h1>
+      {!workData ? (
+        <div className="loadscreen">
+          <h2>{PROFILE_LOADING}</h2>
+        </div>
       ) : (
         <div>
           <Main data={mainData[0]} />
