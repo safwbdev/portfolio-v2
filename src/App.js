@@ -6,6 +6,7 @@ import Skills from "./components/Skills";
 import Work from "./components/Work";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
+import Future from "./components/Future";
 import sanityClient from "./client.js";
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
   const [osData, setOs] = useState(null);
   const [toolsData, setTools] = useState(null);
   const [designData, setDesign] = useState(null);
+  const [learningData, setLearning] = useState(null);
+  const [futureData, setFuture] = useState(null);
 
   useEffect(() => {
     //MAIN
@@ -155,6 +158,26 @@ function App() {
       .then((data) => setTools(data))
       .catch(console.error);
 
+    //FUTURE SKILLS
+    sanityClient
+      .fetch(
+        `*[_type == "future" && skillStatus == "learning"]{
+              name
+          }`
+      )
+      .then((data) => setLearning(data))
+      .catch(console.error);
+
+    //FUTURE SKILLS
+    sanityClient
+      .fetch(
+        `*[_type == "future" && skillStatus == "future"]{
+              name
+          }`
+      )
+      .then((data) => setFuture(data))
+      .catch(console.error);
+
     //WORK
     sanityClient
       .fetch(
@@ -218,6 +241,7 @@ function App() {
             tools={toolsData}
             design={designData}
           />
+          <Future learning={learningData} future={futureData} />
           <Work data={workData} />
           <Education data={eduData} />
           <Contact data={mainData[0]} />

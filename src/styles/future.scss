@@ -1,0 +1,37 @@
+#future {
+  background-color: var(--primary);
+  padding: 100px 0;
+  .future {
+    &-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      display: grid;
+      @media (max-width: 568px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        // display: none;
+      }
+    }
+    &-item {
+      text-align: center;
+    }
+  }
+  .section-header {
+    .subheading {
+      color: var(--dark) !important;
+    }
+  }
+  ul {
+    margin-left: 2em;
+    li {
+      line-height: 2em;
+      display: inline-block;
+      list-style: none;
+      font-size: 1.2em;
+      &:not(:last-child):after {
+        content: ",";
+        margin-right: 0.2em;
+      }
+    }
+  }
+}

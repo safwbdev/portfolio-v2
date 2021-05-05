@@ -8,6 +8,7 @@ import skill from "./skill";
 import education from "./education";
 import work from "./work";
 import project from "./project";
+import future from "./future";
 import blockContent from "./blockContent";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -23,5 +24,6 @@ export default createSchema({
     work,
     project,
     blockContent,
+    future,
   ]),
 });
