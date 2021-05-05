@@ -1,6 +1,5 @@
 import React from 'react'
-const Skills =({data})=> {
-    console.log(data)
+const Index =({data})=> {
     return (
         <div>
             <h1>Skills sets</h1>
@@ -8,4 +7,4 @@ const Skills =({data})=> {
         </div>
     )
 }
-export default  Skills
+export default  Index

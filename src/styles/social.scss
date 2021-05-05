@@ -1,0 +1,25 @@
+.social-icons {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .social-icons li:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}

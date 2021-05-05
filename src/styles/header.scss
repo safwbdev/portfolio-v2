@@ -1,0 +1,121 @@
+header {
+  width: 100%;
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.3 ease;
+
+  &.scrolled {
+    background-color: var(--dark);
+    border-bottom: 3px solid var(--primary);
+    padding: 10px;
+  }
+
+  a {
+    text-transform: uppercase;
+    font-weight: var(--f-bold);
+    font-size: 1rem;
+    transition: all 0.3 ease;
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+      & {
+        font-size: 1em;
+      }
+    }
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    &.active {
+      color: var(--primary);
+    }
+  }
+
+  .mobile-nav {
+    position: relative;
+
+    .hamburger {
+      background: transparent;
+      border: none;
+      color: var(--light);
+      font-size: 2rem;
+    }
+
+    &-links {
+      display: none;
+      background-color: var(--grey);
+      list-style: none;
+      padding: 20px;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 45px;
+
+      .nav-link {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .nav {
+    &-links {
+      display: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-link {
+      display: inline-block;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media (min-width: 660px) {
+  header .mobile-nav {
+    display: none;
+  }
+
+  header .nav-links {
+    display: block;
+  }
+
+  header.scrolled {
+    padding: 20px;
+  }
+}
+.mobile-menu {
+  .MuiMenu-paper {
+    top: 1em !important;
+
+    ul {
+      padding: 0;
+      border: 1px solid var(--grey);
+      background: var(--dark);
+      border-radius: 0;
+
+      .MuiListItem-button {
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--muted);
+        }
+
+        a {
+          color: var(--light);
+        }
+      }
+    }
+  }
+}

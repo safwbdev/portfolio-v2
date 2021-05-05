@@ -1,9 +1,11 @@
-import "./App.css";
+// import "./App.css";
+import "./styles/index.scss";
 import React, { useState, useEffect } from "react";
 import Main from "./components/Main";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
 import Education from "./components/Education";
+import Contact from "./components/Contact";
 import sanityClient from "./client.js";
 
 function App() {
@@ -31,7 +33,7 @@ function App() {
                 url
             },
             alt
-        }
+          }
           
       }`
       )
@@ -58,7 +60,14 @@ function App() {
             role,
             startDate,
             endDate,
-            tasks
+            tasks,
+            companyImage{
+              asset->{
+                  _id,
+                  url
+              },
+              alt
+            }
       }`
       )
       .then((data) => setWork(data))
@@ -73,7 +82,13 @@ function App() {
               location,
               startDate,
               endDate,
-              eduImage,
+              eduImage{
+                asset->{
+                    _id,
+                    url
+                },
+                alt
+              }
         }`
       )
       .then((data) => setEdu(data))
@@ -89,6 +104,7 @@ function App() {
           <Skills data={skillData} />
           <Work data={workData} />
           <Education data={eduData} />
+          <Contact data={mainData[0]} />
         </div>
       )}
     </div>

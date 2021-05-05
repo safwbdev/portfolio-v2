@@ -1,0 +1,159 @@
+#education {
+  padding: 100px 0;
+
+  .heading {
+    text-align: center;
+  }
+
+  @media (max-width: 568px) {
+    .container {
+      padding: 0;
+    }
+  }
+}
+.edu {
+  &-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    display: grid;
+    @media (max-width: 568px) {
+      display: none;
+    }
+  }
+  &-slider {
+    margin-bottom: 100px;
+    display: none;
+    @media (max-width: 568px) {
+      display: block;
+      float: left;
+      width: 100%;
+    }
+  }
+  &-item {
+    padding: 10px;
+    display: flex;
+    @media (max-width: 568px) {
+      & {
+        padding: 10px;
+        border-right: 1px solid var(--primary);
+      }
+    }
+
+    .image-side {
+      position: relative;
+      width: 100%;
+      flex: 0 0 15%;
+      max-width: 15%;
+
+      .image-wrapper {
+        img {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 568px) {
+        flex: unset;
+        align-items: center;
+        justify-content: center;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+
+        img {
+          border-radius: 100%;
+          width: 40%;
+          margin-bottom: 20px;
+        }
+      }
+
+      img {
+        border-radius: 100%;
+        width: 40%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .detail-side {
+      position: relative;
+      width: 100%;
+      flex: 0 0 75%;
+      max-width: 75%;
+
+      @media (max-width: 568px) {
+        flex: unset;
+        max-width: unset;
+      }
+
+      .title-wrapper {
+        padding-left: 15px;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        text-align: left;
+
+        @media (max-width: 568px) {
+          & {
+            display: block;
+            padding: 0;
+            text-align: center;
+            height: unset;
+          }
+        }
+
+        .title {
+          h2 {
+            margin-bottom: 5px;
+
+            &.yearField {
+              font-size: 1.1em;
+              margin-bottom: 5px;
+
+              span {
+                color: var(--primary);
+              }
+            }
+
+            &.institute {
+              color: var(--primary);
+              font-size: 1em;
+            }
+
+            &.company {
+              color: var(--primary);
+              font-size: 1em;
+            }
+
+            &.location {
+              color: var(--light);
+              font-size: 0.8em;
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        @media (max-width: 568px) {
+          .title {
+            h2 {
+              margin-bottom: 5px;
+
+              &.yearField {
+                font-size: 1.3em;
+                margin-bottom: 5px;
+              }
+
+              &.institute {
+                font-size: 1.1em;
+              }
+
+              &.location {
+                color: var(--light);
+                font-size: 0.8em;
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

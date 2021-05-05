@@ -1,0 +1,159 @@
+:root {
+  --dark: #101010;
+  --grey: #252525;
+  // --primary: #ff2c54;
+  // --primary: #8508ec;
+  --primary: #5093e5;
+  --light: #ffffff;
+  --muted: #b7b7b7;
+  --f-regular: 400;
+  --f-bold: 700;
+}
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  width: 100%;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &hover {
+    cursor: pointer;
+  }
+}
+.primary-button {
+  font-weight: var(--f-bold);
+  text-transform: uppercase;
+  color: var(--light);
+  background: var(--primary);
+  padding: 15px 20px;
+  border: 1px solid var(--primary);
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--primary);
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 568px) {
+    & {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    & {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      max-width: 1170px;
+    }
+  }
+}
+
+.section-header {
+  margin-bottom: 50px;
+  text-align: center;
+  .heading {
+    font-size: 2.5rem;
+  }
+  .subheading {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: var(--f-regular);
+  }
+  @media (min-width: 768px) {
+    & .heading {
+      font-size: 3rem;
+    }
+
+    & .subheading {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.comingsoon,
+.loadscreen {
+  background-color: var(--dark);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comingsoon {
+  .title {
+    display: block;
+
+    h1,
+    h3 {
+      text-align: center;
+    }
+  }
+}
+
+.loadscreen {
+  svg {
+    color: #ffffff;
+  }
+
+  h2 {
+    margin-left: 0.5em;
+  }
+}

@@ -21,7 +21,7 @@ const Social = ({ github,
               return (
                 <li key={index}>
                   <a href={url} target="_blank" rel="noopener noreferrer">
-                    <i className={icon}></i> test
+                    <i className={icon}></i>
                   </a>
                 </li>
               );
