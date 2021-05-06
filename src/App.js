@@ -7,6 +7,7 @@ import Work from "./components/Work";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Future from "./components/Future";
+import Projects from "./components/Projects";
 import sanityClient from "./client.js";
 import {
   PROFILE_QUERY,
@@ -23,6 +24,7 @@ import {
   EDUCATION_QUERY,
   FUTURE_QUERY,
   LEARNING_QUERY,
+  PROJECTS_QUERY,
 } from "./constants/queries";
 
 import { PROFILE_LOADING } from "./constants/lang";
@@ -42,6 +44,7 @@ function App() {
   const [designData, setDesign] = useState(null);
   const [learningData, setLearning] = useState(null);
   const [futureData, setFuture] = useState(null);
+  const [projectData, setProject] = useState(null);
 
   useEffect(() => {
     //MAIN
@@ -127,17 +130,24 @@ function App() {
       .fetch(EDUCATION_QUERY)
       .then((data) => setEdu(data))
       .catch(console.error);
+
+    //PROJECTS
+    sanityClient
+      .fetch(PROJECTS_QUERY)
+      .then((data) => setProject(data))
+      .catch(console.error);
   }, []);
 
   return (
     <div className="App">
-      {!workData ? (
+      {!projectData ? (
         <div className="loadscreen">
           <h2>{PROFILE_LOADING}</h2>
         </div>
       ) : (
         <div>
           <Main data={mainData[0]} />
+          <Projects title="Projects" data={projectData} />
           <Skills
             essential={essentialData}
             technical={technicalData}

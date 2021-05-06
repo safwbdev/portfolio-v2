@@ -14,7 +14,7 @@ export default {
     },
     {
       name: "projectType",
-      title: "Poject Type",
+      title: "Project Type",
       type: "string",
       options: {
         list: [
@@ -43,6 +43,9 @@ export default {
       name: "tags",
       type: "array",
       of: [{ type: "string" }],
+      // options: {
+      //   to: { type: "skills" },
+      // },
     },
     {
       title: "project image",

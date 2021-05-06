@@ -93,3 +93,19 @@ export const LEARNING_QUERY = `*[_type == "future" && skillStatus == "learning"]
 export const FUTURE_QUERY = `*[_type == "future" && skillStatus == "future"]{
     name
 }`;
+
+export const PROJECTS_QUERY = `*[_type == "project" ] | order(projectType){
+    title,
+    desc,
+    projectType,
+    githubLink,
+    demoLink,
+    tags,
+    projectImage{
+    asset->{
+        _id,
+        url
+    },
+    alt
+  }
+}`;

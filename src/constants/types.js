@@ -1,0 +1,11 @@
+export const TYPE_CLIENT = "client";
+export const TYPE_PERSONAL = "personal";
+export const TYPE_ESSENTIAL = "essential";
+export const TYPE_CMS = "cms";
+export const TYPE_OS = "os";
+export const TYPE_TOOL = "tools";
+export const TYPE_DB = "database";
+export const TYPE_DESIGN = "design";
+export const TYPE_FRAMEWORK = "framework";
+export const TYPE_LIBRARY = "library";
+export const TYPE_TECHNICAL = "technical";
