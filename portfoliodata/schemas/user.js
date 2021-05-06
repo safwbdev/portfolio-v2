@@ -60,5 +60,10 @@ export default {
         hotspot: true,
       },
     },
+    {
+      title: "Download URL",
+      name: "downloadUrl",
+      type: "string",
+    },
   ],
 };

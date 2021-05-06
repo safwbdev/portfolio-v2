@@ -7,26 +7,17 @@ import { useInView } from "react-intersection-observer";
 import { TYPE_CLIENT, TYPE_PERSONAL } from "../../constants/types";
 import {
   PERSONAL_PROJECT_SETTINGS,
-  CLIENT_PROJECT_SETTINGS,
+//   CLIENT_PROJECT_SETTINGS,
 } from "../../constants/sliderSettings";
 import {
   PROJECT_VISIT,
   PROJECT_DEMO,
   PROJECT_GITHUB,
+  PROJECT_CLIENT_SUBTITLE
 } from "../../constants/lang";
 
 const Index = ({title, data}) => {
-    // console.log(data)
-    let settings;
-    if (data.projectType === TYPE_PERSONAL) {
-      settings = PERSONAL_PROJECT_SETTINGS;
-    } else if (data.projectType === TYPE_CLIENT) {
-      settings = CLIENT_PROJECT_SETTINGS;
-    } else {
-      settings = PERSONAL_PROJECT_SETTINGS;
-    }
-
-console.log(data)
+    const settings = PERSONAL_PROJECT_SETTINGS;
 
   const SectionHeader = () => {
     const controls = useAnimation();
@@ -73,11 +64,11 @@ console.log(data)
   }) => {
     return (
       <div className="portfolio-item">
-        <div className="image-wrapper">
-          <img src={projectImage.asset.url} alt="" width="100%" height="100%" />
+        <div className={projectType === "client" ? "image-wrapper client" : "image-wrapper"}>
+                <img src={projectImage.asset.url} alt="" width="100%" height="100%" />
         </div>
         <div className="title-wrapper">
-          <h2>{title}</h2>
+          <h2>{title} {projectType === "client" ? "*" : null}</h2>
         </div>
         {projectType === TYPE_CLIENT && (
           <div className="desc-wrapper">
@@ -135,6 +126,7 @@ console.log(data)
         <div className="container">
           <SectionHeader />
           <GetSlides />
+          <p className="tnc">{PROJECT_CLIENT_SUBTITLE}</p>
         </div>
       </div>
     </section>

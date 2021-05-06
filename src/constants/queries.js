@@ -6,6 +6,8 @@ export const PROFILE_QUERY = `*[_type == "user"]{
     location,
     githubLink,
     linkedInlink,
+    downloadUrl,
+    fileName,
     desc,
     userImage{
         asset->{
@@ -75,10 +77,10 @@ export const EDUCATION_QUERY = `*[_type == "education"] | order(endDate desc) {
     startDate,
     endDate,
     eduImage{
-      asset->{
-          _id,
-          url
-      },
+        asset->{
+            _id,
+            url
+        },
       alt
     }
 }`;
@@ -102,10 +104,10 @@ export const PROJECTS_QUERY = `*[_type == "project" ] | order(projectType){
     demoLink,
     tags,
     projectImage{
-    asset->{
-        _id,
-        url
-    },
-    alt
-  }
+        asset->{
+            _id,
+            url
+        },
+        alt
+    }
 }`;

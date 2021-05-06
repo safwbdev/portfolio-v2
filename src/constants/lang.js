@@ -15,7 +15,7 @@ export const PROFILE_GREETING = "Hello there";
 // PROJECTS
 export const PROJECT_CLIENT_TITLE = "Client Portfolio";
 export const PROJECT_CLIENT_SUBTITLE =
-  "These projects are displayed with persmission from the original owners";
+  "* Client projects are displayed with persmission from the original owners";
 export const PROJECT_PERSONAL_TITLE = "Personal Portfolio";
 export const PROJECT_PERSONAL_SUBTITLE =
   "Some silly projects I do in my spare time";
