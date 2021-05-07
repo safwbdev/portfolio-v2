@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Contact = ({ data: { email, phone, linkedInlink, githubLink } }) => {
+const Index = ({ data }) => {
+  const { email, phone, linkedInlink, githubLink } = data[0]
   const SectionHeader = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
@@ -140,4 +141,4 @@ const Contact = ({ data: { email, phone, linkedInlink, githubLink } }) => {
   );
 };
 
-export default Contact;
+export default Index;

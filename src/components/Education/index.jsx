@@ -5,25 +5,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import moment from "moment";
-// import { WORK_SETTINGS } from "../../constants/sliderSettings";
-import { EDUCATION_TITLE } from "../constants/lang";
+import { WORK_SETTINGS } from "../../constants/sliderSettings";
+import { EDUCATION_TITLE } from "../../constants/lang";
 
-const Education = ({ data }) => {
+const Index = ({ data }) => {
 
     function getGradDate(date) {
         const d = new Date(date);
         const newDate = moment(d).format("YYYY");
         return newDate;
       }
-    let settings = {
-        dots: true,
-        arrows: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1.2,
-        slidesToScroll: 1,
-        initialSlide: 0,
-      };
+    let settings = WORK_SETTINGS;
 
   const EduBox = ({ data: { eduImage, endDate, field, schoolName, location } }) => {
     return (
@@ -139,4 +131,4 @@ className="section-header"
     </>
   );
 };
-export default Education;
+export default Index;

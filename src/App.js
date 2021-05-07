@@ -47,100 +47,138 @@ function App() {
   const [learningData, setLearning] = useState(null);
   const [futureData, setFuture] = useState(null);
   const [projectData, setProject] = useState(null);
+  const [statusData, setStatus] = useState(false);
+
+  const getAll = async () => {
+    try {
+      const data = await sanityClient.fetch(PROFILE_QUERY);
+      if (data) {
+        console.log("main");
+        setMain(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(ESSENTIAL_QUERY);
+      if (data) {
+        setEssential(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(TECHNICAL_QUERY);
+      if (data) {
+        setTechnical(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(FRAMEWORK_QUERY);
+      if (data) {
+        setFramework(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(LIBRARY_QUERY);
+      if (data) {
+        setLibrary(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(OS_QUERY);
+      if (data) {
+        setOs(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(CMS_QUERY);
+      if (data) {
+        setCms(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(DESIGN_QUERY);
+      if (data) {
+        setDesign(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(DATABASE_QUERY);
+      if (data) {
+        setDatabase(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(TOOLS_QUERY);
+      if (data) {
+        setTools(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(LEARNING_QUERY);
+      if (data) {
+        setLearning(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(FUTURE_QUERY);
+      if (data) {
+        setFuture(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(WORK_QUERY);
+      if (data) {
+        setWork(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(EDUCATION_QUERY);
+      if (data) {
+        setEdu(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const data = await sanityClient.fetch(PROJECTS_QUERY);
+      if (data) {
+        setProject(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    setStatus(true);
+  };
 
   useEffect(() => {
-    //MAIN
-    sanityClient
-      .fetch(PROFILE_QUERY)
-      .then((data) => setMain(data))
-      .catch(console.error);
-
-    //Essential SKILLS
-    sanityClient
-      .fetch(ESSENTIAL_QUERY)
-      .then((data) => setEssential(data))
-      .catch(console.error);
-
-    //TECHNICAL SKILLS
-    sanityClient
-      .fetch(TECHNICAL_QUERY)
-      .then((data) => setTechnical(data))
-      .catch(console.error);
-
-    //FRAMEWORK SKILLS
-    sanityClient
-      .fetch(FRAMEWORK_QUERY)
-      .then((data) => setFramework(data))
-      .catch(console.error);
-
-    //LIBARIES SKILLS
-    sanityClient
-      .fetch(LIBRARY_QUERY)
-      .then((data) => setLibrary(data))
-      .catch(console.error);
-
-    //OS SKILLS
-    sanityClient
-      .fetch(OS_QUERY)
-      .then((data) => setOs(data))
-      .catch(console.error);
-
-    //CMS SKILLS
-    sanityClient
-      .fetch(CMS_QUERY)
-      .then((data) => setCms(data))
-      .catch(console.error);
-
-    //DESIGN SKILLS
-    sanityClient
-      .fetch(DESIGN_QUERY)
-      .then((data) => setDesign(data))
-      .catch(console.error);
-
-    //DATABASE SKILLS
-    sanityClient
-      .fetch(DATABASE_QUERY)
-      .then((data) => setDatabase(data))
-      .catch(console.error);
-
-    //TOOLS SKILLS
-    sanityClient
-      .fetch(TOOLS_QUERY)
-      .then((data) => setTools(data))
-      .catch(console.error);
-
-    //LEARNING SKILLS
-    sanityClient
-      .fetch(LEARNING_QUERY)
-      .then((data) => setLearning(data))
-      .catch(console.error);
-
-    //FUTURE SKILLS
-    sanityClient
-      .fetch(FUTURE_QUERY)
-      .then((data) => setFuture(data))
-      .catch(console.error);
-
-    //WORK
-    sanityClient
-      .fetch(WORK_QUERY)
-      .then((data) => setWork(data))
-      .catch(console.error);
-
-    //EDUCATION
-    sanityClient
-      .fetch(EDUCATION_QUERY)
-      .then((data) => setEdu(data))
-      .catch(console.error);
-
-    //PROJECTS
-    sanityClient
-      .fetch(PROJECTS_QUERY)
-      .then((data) => setProject(data))
-      .catch(console.error);
+    getAll();
   }, []);
 
-  if (!workData) {
+  if (!statusData) {
     return (
       <div className="loadscreen">
         <h2>{PROFILE_LOADING}</h2>
@@ -171,7 +209,7 @@ function App() {
         <Future learning={learningData} future={futureData} />
         <Work data={workData} />
         <Education data={eduData} />
-        <Contact data={mainData[0]} />
+        <Contact data={mainData} />
       </motion.div>
     );
   }
