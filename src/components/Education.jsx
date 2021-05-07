@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import moment from "moment";
-import { WORK_SETTINGS } from "../../constants/sliderSettings";
-import { EDUCATION_TITLE } from "../../constants/lang";
+import { WORK_SETTINGS } from "../constants/sliderSettings";
+import { EDUCATION_TITLE } from "../constants/lang";
 
 const Index = ({ data }) => {
 

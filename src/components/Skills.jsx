@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { SKILL_TITLE } from "../../constants/lang";
+import { SKILL_TITLE } from "../constants/lang";
 
 const Index =({essential, technical, framework, library,
     database,

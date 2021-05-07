@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { DialogContent, DialogTitle, Dialog } from "@material-ui/core";
-import { WORK_TASK_BTN, WORK_TASKS } from "../../constants/lang";
+import { WORK_TASK_BTN, WORK_TASKS } from "../constants/lang";
 import BlockContent from "@sanity/block-content-to-react"
 
 function SimpleDialog(props) {

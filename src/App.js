@@ -1,7 +1,7 @@
 // import "./App.css";
 import "./styles/index.scss";
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header/";
+import Header from "./components/Header";
 import Main from "./components/Main";
 import Skills from "./components/Skills";
 import Work from "./components/Work";

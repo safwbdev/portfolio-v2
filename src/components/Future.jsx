@@ -6,7 +6,7 @@ import {
   FUTURE_SUBTITLE,
   FUTURE_LEARNING,
   FUTURE_PLANNING,
-} from "../../constants/lang";
+} from "../constants/lang";
 // const learning = ["Shopify", "Liquid", "Laravel"];
 // const plans = ["Python", "iOS Development", "Kotlin", "Nuxt"];
 const Index = ({ learning, future }) => {

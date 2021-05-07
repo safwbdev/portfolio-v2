@@ -4,17 +4,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { TYPE_CLIENT, TYPE_PERSONAL } from "../../constants/types";
+import { TYPE_CLIENT, TYPE_PERSONAL } from "../constants/types";
 import {
   PERSONAL_PROJECT_SETTINGS,
 //   CLIENT_PROJECT_SETTINGS,
-} from "../../constants/sliderSettings";
+} from "../constants/sliderSettings";
 import {
   PROJECT_VISIT,
   PROJECT_DEMO,
   PROJECT_GITHUB,
   PROJECT_CLIENT_SUBTITLE
-} from "../../constants/lang";
+} from "../constants/lang";
 
 const Index = ({title, data}) => {
     const settings = PERSONAL_PROJECT_SETTINGS;

@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
-import Social from "../Social";
+import Social from "./Social";
 import {
     titleVariants,
     subTitleVariants,
     socialVariants1,
-  } from "../../constants/variants";
+  } from "../constants/variants";
 import {
     PROFILE_TITLE,
     PROFILE_SUBTITLE,
     PROFILE_GREETING,
     PROFILE_DOWNLOAD,
-  } from "../../constants/lang";
+  } from "../constants/lang";
   import { motion, useAnimation } from "framer-motion";
   import { useInView } from "react-intersection-observer";
 
