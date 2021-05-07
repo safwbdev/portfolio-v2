@@ -11,12 +11,16 @@ import {
     PROFILE_GREETING,
     PROFILE_DOWNLOAD,
   } from "../constants/lang";
+import {
+  CV_FILE_DOWNLOAD,
+  CV_FILE_NAME
+  } from "../constants/assets";
   import { motion, useAnimation } from "framer-motion";
   import { useInView } from "react-intersection-observer";
 
 const Index = ({data}) => {
     const {name, role, userImage, githubLink, desc,
-        linkedInlink, downloadUrl, fileName} = data[0];
+        linkedInlink} = data[0];
 
         const SectionHeader = () => {
             const controls = useAnimation();
@@ -112,15 +116,15 @@ const Index = ({data}) => {
               <hr />
               <div className="text-content-footer">
                 <div className="button-wrapper">
-                  <a
-                    href={downloadUrl}
-                    download={fileName}
+                  {CV_FILE_DOWNLOAD ?(<a
+                    href={CV_FILE_DOWNLOAD}
+                    download={CV_FILE_NAME}
                     className="primary-button"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {PROFILE_DOWNLOAD}
-                  </a>
+                  </a>) : null }
                 </div>
                 <Social github={githubLink} linkedin={linkedInlink} />
               </div>
