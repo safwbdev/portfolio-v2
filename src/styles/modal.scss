@@ -1,0 +1,39 @@
+.MuiDialog-paper {
+  background-color: var(--grey) !important;
+  border: 1px solid var(--primary);
+  border-radius: 0 !important;
+  color: var(--light) !important;
+
+  h2 {
+    text-align: center;
+    line-height: 1.2em;
+
+    div {
+      color: var(--primary);
+      font-weight: var(--f-bold);
+      margin-top: 10px;
+    }
+  }
+
+  hr {
+    border: 1px solid var(--primary);
+    margin-bottom: 20px;
+  }
+
+  ul {
+    line-height: 2em;
+    padding-left: 20px;
+  }
+}
+
+.slick-dots {
+  position: unset !important;
+
+  li {
+    button {
+      &:before {
+        color: var(--primary) !important;
+      }
+    }
+  }
+}

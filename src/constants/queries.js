@@ -57,6 +57,7 @@ export const TOOLS_QUERY = `*[_type == "future" && skillStatus == "future"]{
     name
 }`;
 export const WORK_QUERY = `*[_type == "work"]  | order(endDate desc){
+    _id,
     companyName,
     role,
     startDate,

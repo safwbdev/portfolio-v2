@@ -1,0 +1,18 @@
+.slick-slider {
+  width: 100%;
+
+  .slick-slide {
+    img {
+      display: inline !important;
+    }
+  }
+}
+
+@media screen and (device-width: 480px) and (device-height: 640px) {
+  .slick-slide {
+    margin: 0 10px;
+    background: #000000;
+    margin: 0;
+    background: transparent;
+  }
+}

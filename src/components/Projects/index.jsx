@@ -44,7 +44,6 @@ const Index = ({title, data}) => {
     );
   };
   const GetStacks = ({ skillType }) => {
-      console.log(skillType)
     return (
       <div className="stack-wrapper">
         {skillType &&

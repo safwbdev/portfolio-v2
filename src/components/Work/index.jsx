@@ -5,9 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { WORK_SETTINGS } from "../../constants/sliderSettings";
 import { WORK_TITLE } from "../../constants/lang";
 import moment from "moment";
-// import Modal from "./Modal";
+import Modal from "./Modal";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import BlockContent from "@sanity/block-content-to-react"
 
 const Index = ({ data }) => {
   let settings = WORK_SETTINGS;
@@ -42,7 +43,7 @@ const Index = ({ data }) => {
   const WorkBox = ({
     getId,
     isSlider,
-    data: { companyImage, role, companyName, startDate, endDate, location, desc },
+    data: { _id, companyImage, role, companyName, startDate, endDate, location, tasks },
   }) => {
     let currentStatus = endDate ? getWorkDate(endDate) : "Current";
 
@@ -68,15 +69,14 @@ const Index = ({ data }) => {
 
           <div className="task-wrapper">
             {isSlider ? (
-                <div></div>
-            //   <Modal id={getId} name={name} data={desc} />
+              <Modal id={_id} name={companyName} data={tasks} />
             ) : (
-              <ul>
-                {desc &&
-                  desc.map((task, index) => {
-                    return <li key={index}>{task}</li>;
-                  })}
-              </ul>
+                <>
+              <BlockContent 
+                blocks={tasks} 
+                projectId={process.env.REACT_APP_API_KEY} 
+                dataset="production" />
+                </>
             )}
           </div>
         </div>

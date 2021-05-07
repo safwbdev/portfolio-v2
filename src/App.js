@@ -147,7 +147,6 @@ function App() {
       </div>
     );
   } else {
-    // console.log(projectData);
     return (
       <motion.div
         className="App"
