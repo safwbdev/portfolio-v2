@@ -1,11 +1,12 @@
 export const PERSONAL_PROJECT_SETTINGS = {
   dots: true,
-  infinite: false,
+  // infinite: false,
   speed: 400,
-  //   autoplay: true,
+  autoplay: true,
   slidesToShow: 4,
   slidesToScroll: 1,
-  //   infinite: true,
+  infinite: true,
+  pauseOnHover: true,
   responsive: [
     {
       breakpoint: 1024,

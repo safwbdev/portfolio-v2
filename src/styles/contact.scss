@@ -48,7 +48,11 @@
         font-size: 1rem;
         color: var(--light);
         font-weight: var(--f-bold);
-        transition: all 0.3s ease;
+        transform: translate3d(0, 0, 0);
+        -webkit-transition: all 0.3s linear 0s;
+        -o-transition: all 0.3s linear 0s;
+        -moz-transition: all 0.3s linear 0s;
+        transition: all 0.3s linear 0s;
       }
 
       a:hover {

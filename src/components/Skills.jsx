@@ -86,7 +86,7 @@ const Index =({essential, technical, framework, library,
               { essential ? <SkillSection title="Essentials" data={essential} /> : null}
               { technical ? <SkillSection title="Technical" data={technical} /> : null}
               { framework ? <SkillSection title="Frameworks" data={framework} /> : null}
-              { library ? <SkillSection title="Library" data={library} /> : null}
+              { library ? <SkillSection title="UI Libraries" data={library} /> : null}
               { database ? <SkillSection title="Database" data={database} /> : null}
               { cms ? <SkillSection title="Content Mangement Systems" data={cms} /> : null}
               { os ? <SkillSection title="OS" data={os} /> : null}
