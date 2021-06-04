@@ -1,6 +1,25 @@
 #future {
-  background-color: var(--primary);
-  padding: 100px 0;
+  // background-color: var(--primary);
+  // padding: 100px 0;
+  // border-radius: 8px;
+  // margin: 0 20px;
+  .container {
+    // border: 1px solid red;
+    background-color: var(--primary);
+    padding: 100px 0;
+    border-radius: 8px;
+    // margin: 0 20px;
+  }
+  @media (max-width: 568px) {
+    padding: 30px 0;
+    .section-header {
+      margin-bottom: 30px;
+      .subheading {
+        margin-top: 30px;
+        font-size: 1.1em;
+      }
+    }
+  }
   .future {
     &-grid {
       grid-template-columns: repeat(2, 1fr);

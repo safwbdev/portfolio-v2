@@ -10,6 +10,9 @@
       // border-radius: 999px;
       // object-fit: cover;
       // }
+      img {
+        border-radius: 8px;
+      }
     }
     .text-content {
       .content-heading {
@@ -67,9 +70,10 @@
         max-width: 40%;
         padding-right: 70px;
         img {
-          border-radius: 0;
+          // border-radius: 0;
           width: 100%;
           height: auto;
+          border-radius: 8px;
         }
         .content-heading {
           font-size: 2rem;
@@ -77,6 +81,9 @@
         }
       }
     }
+  }
+  @media (max-width: 568px) {
+    padding: 100px 0 0 0;
   }
   @media (min-width: 768px) {
     padding: 170px 0;

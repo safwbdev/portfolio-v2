@@ -5,6 +5,7 @@
   padding: 100px 0;
 
   @media (max-width: 568px) {
+    padding: 100px 0 0 0;
     .container {
       padding: 0;
     }
@@ -27,9 +28,19 @@
     display: none;
 
     @media (max-width: 568px) {
-      display: block;
-      float: left;
-      width: 100%;
+      // display: block;
+      // float: left;
+      // width: 100%;
+      display: flex;
+      .slick-list,
+      .slick-track {
+        display: flex;
+      }
+      .slick-slide {
+        border: 1px solid var(--primary);
+        border-radius: 10px;
+        margin-right: 10px;
+      }
     }
   }
 
@@ -40,7 +51,7 @@
     @media (max-width: 568px) {
       & {
         padding: 10px;
-        border-right: 1px solid var(--primary);
+        // border-right: 1px solid var(--primary);
       }
     }
 
@@ -53,6 +64,7 @@
       .image-wrapper {
         img {
           width: 100%;
+          border-radius: 8px;
         }
       }
 
@@ -107,7 +119,7 @@
 
         .title {
           h2 {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
 
             &.role {
               font-size: 1.3em;
@@ -147,7 +159,7 @@
 
               &.company {
                 color: var(--primary);
-                font-size: 1.3em;
+                font-size: 1.1em;
               }
 
               &.location {
@@ -161,7 +173,7 @@
       }
 
       .task-wrapper {
-        margin-top: 15px;
+        margin-top: 30px;
         padding: 0 30px;
 
         @media (max-width: 568px) {
@@ -174,6 +186,9 @@
 
         ul {
           line-height: 2em;
+          ::marker {
+            color: var(--primary);
+          }
         }
       }
     }

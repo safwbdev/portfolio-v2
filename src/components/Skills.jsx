@@ -54,6 +54,8 @@ const Index =({essential, technical, framework, library,
             }}
           >
             <h4>{title}</h4>
+            <div className="skillset">
+
             {data &&
               data.map(({ icon, name }, index) => {
                 const content = (
@@ -67,6 +69,7 @@ const Index =({essential, technical, framework, library,
                   </span>
                 );
               })}
+              </div>
           </motion.div>
         );
       };

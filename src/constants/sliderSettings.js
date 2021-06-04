@@ -2,7 +2,7 @@ export const PERSONAL_PROJECT_SETTINGS = {
   dots: true,
   // infinite: false,
   speed: 400,
-  autoplay: true,
+  // autoplay: true,
   slidesToShow: 4,
   slidesToScroll: 1,
   infinite: true,
@@ -30,14 +30,19 @@ export const PERSONAL_PROJECT_SETTINGS = {
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
+        centerMode: true,
+
+        autoplay: false,
       },
     },
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1.2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
+        centerMode: true,
+        autoplay: false,
       },
     },
   ],
@@ -68,6 +73,7 @@ export const CLIENT_PROJECT_SETTINGS = {
     {
       breakpoint: 600,
       settings: {
+        centerMode: true,
         slidesToShow: 2,
         slidesToScroll: 2,
       },
@@ -76,6 +82,7 @@ export const CLIENT_PROJECT_SETTINGS = {
       breakpoint: 480,
       settings: {
         arrows: false,
+        centerMode: true,
         slidesToShow: 1.2,
         slidesToScroll: 1,
       },
@@ -88,9 +95,10 @@ export const WORK_SETTINGS = {
   arrows: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 1.2,
+  slidesToShow: 1,
   slidesToScroll: 1,
   initialSlide: 0,
+  centerMode: true,
 };
 
 export const EDUCATION_SETTINGS = {
@@ -98,7 +106,8 @@ export const EDUCATION_SETTINGS = {
   arrows: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 1.2,
+  slidesToShow: 1,
   slidesToScroll: 1,
   initialSlide: 0,
+  centerMode: true,
 };

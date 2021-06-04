@@ -6,6 +6,7 @@
   }
 
   @media (max-width: 568px) {
+    padding: 0;
     .container {
       padding: 0;
     }
@@ -24,9 +25,19 @@
     margin-bottom: 100px;
     display: none;
     @media (max-width: 568px) {
-      display: block;
-      float: left;
-      width: 100%;
+      // display: block;
+      // float: left;
+      // width: 100%;
+      display: flex;
+      .slick-list,
+      .slick-track {
+        display: flex;
+      }
+      .slick-slide {
+        border: 1px solid var(--primary);
+        border-radius: 10px;
+        margin-right: 10px;
+      }
     }
   }
   &-item {
@@ -35,7 +46,7 @@
     @media (max-width: 568px) {
       & {
         padding: 10px;
-        border-right: 1px solid var(--primary);
+        // border-right: 1px solid var(--primary);
       }
     }
 
@@ -48,6 +59,7 @@
       .image-wrapper {
         img {
           width: 100%;
+          border-radius: 8px;
         }
       }
 

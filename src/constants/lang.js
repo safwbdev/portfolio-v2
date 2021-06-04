@@ -1,7 +1,7 @@
 // TITLE
 export const WEB_TITLE = "SAFWBDEV | Web Developer";
 // PROFILE
-export const PROFILE_LOADING = "Loading. Just a moment...";
+export const PROFILE_LOADING = "One moment please";
 export const PROFILE_GITHUB = "Check Out My Github";
 export const PROFILE_LINKEDIN = "Visit My LinkedIn";
 export const PROFILE_LINKEDIN_2 = "See Me On LinkedIn";
