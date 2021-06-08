@@ -10,6 +10,9 @@ import Contact from "./components/Contact";
 import Future from "./components/Future";
 import Projects from "./components/Projects";
 import sanityClient from "./client.js";
+import { PROFILE_LOADING } from "./constants/lang";
+import { motion } from "framer-motion";
+import { appVariants } from "./constants/variants";
 import {
   PROFILE_QUERY,
   ESSENTIAL_QUERY,
@@ -27,9 +30,6 @@ import {
   LEARNING_QUERY,
   PROJECTS_QUERY,
 } from "./constants/queries";
-import { PROFILE_LOADING } from "./constants/lang";
-import { motion } from "framer-motion";
-import { appVariants } from "./constants/variants";
 
 function App() {
   const [mainData, setMain] = useState(null);
