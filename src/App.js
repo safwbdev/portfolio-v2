@@ -182,7 +182,7 @@ function App() {
         if (data) {
           setWork(data);
           count++;
-          console.log(data);
+          // console.log(data);
           loadingPercent(count);
         }
       } catch (error) {

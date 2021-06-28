@@ -9,12 +9,12 @@ import {
     PROFILE_TITLE,
     PROFILE_SUBTITLE,
     PROFILE_GREETING,
-    PROFILE_DOWNLOAD,
+    // PROFILE_DOWNLOAD,
   } from "../constants/lang";
-import {
-  CV_FILE_DOWNLOAD,
-  CV_FILE_NAME
-  } from "../constants/assets";
+// import {
+//   CV_FILE_DOWNLOAD,
+//   CV_FILE_NAME
+//   } from "../constants/assets";
   import { motion, useAnimation } from "framer-motion";
   import { useInView } from "react-intersection-observer";
 
