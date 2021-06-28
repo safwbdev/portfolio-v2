@@ -115,7 +115,7 @@ const Index = ({data}) => {
               <p>{desc}</p>
               <hr />
               <div className="text-content-footer">
-                <div className="button-wrapper">
+                {/* <div className="button-wrapper">
                   {CV_FILE_DOWNLOAD ?(<a
                     href={CV_FILE_DOWNLOAD}
                     download={CV_FILE_NAME}
@@ -125,7 +125,7 @@ const Index = ({data}) => {
                   >
                     {PROFILE_DOWNLOAD}
                   </a>) : null }
-                </div>
+                </div> */}
                 <Social github={githubLink} linkedin={linkedInlink} />
               </div>
             </div>
