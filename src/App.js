@@ -1,5 +1,5 @@
-// import "./App.css";
-import "./styles/index.scss";
+import "./App.css";
+// import "./styles/index.scss";
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -215,6 +215,7 @@ function App() {
     };
     getAll();
   }, []);
+
   return statusData ? (
     <motion.div
       className="App"

@@ -53,8 +53,10 @@ export const OS_QUERY = `*[_type == "skills" && skillType == "os"]  | order(name
     icon,
     skillType
 }`;
-export const TOOLS_QUERY = `*[_type == "future" && skillStatus == "future"]{
-    name
+export const TOOLS_QUERY = `*[_type == "skills" && skillType == "tools"]  | order(name){
+    name,
+    icon,
+    skillType
 }`;
 export const WORK_QUERY = `*[_type == "work"]  | order(startDate desc){
     _id,
