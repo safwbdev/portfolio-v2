@@ -59,3 +59,13 @@ export const FUTURE_TITLE = "Learning";
 export const FUTURE_SUBTITLE = "Because learning is a life-long process";
 export const FUTURE_LEARNING = "Currently learning";
 export const FUTURE_PLANNING = "Wants to learn";
+
+// CONTACT
+export const CONTACT_TITLE = "Contact";
+export const CONTACT_SUBTITLE = "Get in touch with me";
+export const CONTACT_EMAIL = "Email";
+export const CONTACT_CALL = "Call me";
+export const CONTACT_SEE = "See me on";
+export const CONTACT_LINKEDIN = "LinkedIn";
+export const CONTACT_CHECK = "Check out my";
+export const CONTACT_GITHUB = "Github";

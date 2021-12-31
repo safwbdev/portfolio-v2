@@ -1,14 +1,16 @@
 import "./App.css";
 // import "./styles/index.scss";
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Skills from "./components/Skills";
-import Work from "./components/Work";
-import Education from "./components/Education";
-import Contact from "./components/Contact";
-import Future from "./components/Future";
-import Projects from "./components/Projects";
+import {
+  Header,
+  Intro,
+  Skills,
+  Work,
+  Education,
+  Contact,
+  Future,
+  Projects,
+} from "./components";
 import sanityClient from "./client.js";
 import { PROFILE_LOADING } from "./constants/lang";
 import { motion } from "framer-motion";
@@ -224,7 +226,7 @@ function App() {
       animate="visible"
     >
       <Header />
-      <Main data={mainData} />
+      <Intro data={mainData} />
       <Projects title="Projects" data={projectData} />
       <Skills
         essential={essentialData}

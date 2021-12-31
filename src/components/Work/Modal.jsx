@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { DialogContent, DialogTitle, Dialog } from "@material-ui/core";
-import { WORK_TASK_BTN, WORK_TASKS } from "../constants/lang";
+import { WORK_TASK_BTN, WORK_TASKS } from "../../constants/lang";
 import BlockContent from "@sanity/block-content-to-react"
+
 
 function SimpleDialog(props) {
   const { onClose, open, name, data } = props;
@@ -17,6 +18,7 @@ function SimpleDialog(props) {
       aria-labelledby="simple-dialog-title"
       open={open}
     >
+
       <DialogTitle id="simple-dialog-title">
         {WORK_TASKS} <div>{name}</div>
       </DialogTitle>

@@ -6,9 +6,10 @@ import {
   FUTURE_SUBTITLE,
   FUTURE_LEARNING,
   FUTURE_PLANNING,
-} from "../constants/lang";
+} from "../../constants/lang";
+import SectionHeader from "../SectionHeader";
 
-const Index = ({ learning, future }) => {
+const Future = ({ learning, future }) => {
 
   const controls = useAnimation();
     const [ref, inView] = useInView();
@@ -18,16 +19,6 @@ const Index = ({ learning, future }) => {
       }
     }, [controls, inView]);
 
-  const SectionHeader = () => {
-    return (
-      <div
-        className="section-header"
-      >
-        <h3 className="heading">{FUTURE_TITLE}</h3>
-        <h4 className="subheading">{FUTURE_SUBTITLE}</h4>
-      </div>
-    );
-  };
   const FutureDesktop = () => {
     return (
       <div
@@ -75,10 +66,10 @@ const Index = ({ learning, future }) => {
       hidden: { opacity: 0, y: 300 },
     }}>
       <div className="container">
-        <SectionHeader />
+        <SectionHeader title={FUTURE_TITLE} subtitle={FUTURE_SUBTITLE} noAnimation />
         <FutureDesktop />
       </div>
     </motion.div>
   );
 };
-export default Index;
+export default Future;

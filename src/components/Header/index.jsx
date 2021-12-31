@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { HEADER_BRAND } from "../constants/lang";
-import { links } from "../constants/linkData";
+import { HEADER_BRAND } from "../../constants/lang";
+import { links } from "../../constants/linkData";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 import { motion } from "framer-motion";
-import { headerVariants } from "../constants/variants";
+import { headerVariants } from "../../constants/variants";
 
 const Index = () => {
   const [anchorEl, setAnchorEl] = useState(null);
