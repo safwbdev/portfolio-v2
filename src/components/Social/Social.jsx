@@ -1,6 +1,13 @@
 import React from "react";
+import useStyles from "./style";
+
 const Social = ({ github,
-    linkedin }) => {
+    linkedin, isHero }) => {
+  
+      const classes = useStyles();
+
+      const clastest = isHero ? classes.socialIconsHero : classes.socialIcons;
+
   const socialLinks = [
     { icon: "fab fa-facebook-f", url: null },
 
@@ -13,13 +20,13 @@ const Social = ({ github,
     { icon: "fab fa-github", url: github },
   ];
   return (
-    <div className="social-icons">
-      <ul>
+    <div className={clastest}>
+      <ul className={classes.socialList}>
         {socialLinks &&
           socialLinks.map(({ url, icon }, index) => {
             if (url) {
               return (
-                <li key={index}>
+                <li className={classes.socialListItem} key={index}>
                   <a href={url} target="_blank" rel="noopener noreferrer">
                     <i className={icon}></i>
                   </a>

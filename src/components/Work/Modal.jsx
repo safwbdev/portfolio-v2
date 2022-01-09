@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { DialogContent, DialogTitle, Dialog } from "@material-ui/core";
 import { WORK_TASK_BTN, WORK_TASKS } from "../../constants/lang";
 import BlockContent from "@sanity/block-content-to-react"
-
+import useStyles from "./style"
 
 function SimpleDialog(props) {
+  const classes = useStyles()
   const { onClose, open, name, data } = props;
 
   const handleClose = () => {
@@ -16,13 +17,14 @@ function SimpleDialog(props) {
     <Dialog
       onClose={handleClose}
       aria-labelledby="simple-dialog-title"
+      className={classes.workModal}
       open={open}
     >
 
-      <DialogTitle id="simple-dialog-title">
+      <DialogTitle className={classes.workModalTitle} id="simple-dialog-title">
         {WORK_TASKS} <div>{name}</div>
       </DialogTitle>
-      <DialogContent>
+      <DialogContent className={classes.workModalContent}>
         <hr />
         <BlockContent 
                 blocks={data} 

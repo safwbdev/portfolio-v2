@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import useStyles from "./style";
 
 const SectionHeader = ({ title, subtitle, noAnimation }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
-  
+const classes = useStyles();  
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -20,14 +21,14 @@ const SectionHeader = ({ title, subtitle, noAnimation }) => {
       };
   return (
     <motion.div
-      className="section-header"
+      className={classes.sectionHeader}
       ref={ref}
       animate={controls}
       initial="hidden"
       variants={animvariant}
     >
-      {title && <h3 className="heading">{title}</h3>}
-      {subtitle && <h4 className="subheading">{subtitle}</h4>}
+      {title && <h3>{title}</h3>}
+      {subtitle && <h4>{subtitle}</h4>}
     </motion.div>
   );
 };

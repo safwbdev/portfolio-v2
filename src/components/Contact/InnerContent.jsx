@@ -9,8 +9,10 @@ import {
   CONTACT_LINKEDIN,
   CONTACT_SEE,
 } from "../../constants/lang";
+import useStyles from "./style"
 
 const InnerContent = ({ email, phone, linkedInlink, githubLink }) => {
+  const classes = useStyles()
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -20,7 +22,7 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink }) => {
   }, [controls, inView]);
   return (
     <motion.div
-      className="inner-content"
+      className={classes.innerContent}
       ref={ref}
       animate={controls}
       initial="hidden"
@@ -29,40 +31,40 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink }) => {
         hidden: { opacity: 0, y: 300 },
       }}
     >
-      <div className="contact-info">
+      <div className={classes.contactInfo}>
         {email && (
-          <div className="contact-block">
-            <div className="icon-wrapper">
+          <div className={classes.contactBlock}>
+            <div className={classes.iconWrapper}>
               <a href={`mailto:${email}`}>
                 <i className="fa fa-fw fa-envelope"></i>
               </a>
             </div>
-            <div className="details">
+            <div className={classes.contactDetails}>
               <a href={`mailto:${email}`}>
-                <h5 className="heading">{CONTACT_EMAIL}</h5>
+                <h5 className={classes.contactHeading}>{CONTACT_EMAIL}</h5>
                 <span>{email}</span>
               </a>
             </div>
           </div>
         )}
         {phone && (
-          <div className="contact-block">
-            <div className="icon-wrapper">
+          <div className={classes.contactBlock}>
+            <div className={classes.iconWrapper}>
               <a href={`tel:${phone}`}>
                 <i className="fa fa-fw fa-phone"></i>
               </a>
             </div>
-            <div className="details">
+            <div className={classes.contactDetails}>
               <a href={`tel:${phone}`}>
-                <h5 className="heading">{CONTACT_CALL}</h5>
+                <h5 className={classes.contactHeading}>{CONTACT_CALL}</h5>
                 <span>{phone}</span>
               </a>
             </div>
           </div>
         )}
         {linkedInlink && (
-          <div className="contact-block">
-            <div className="icon-wrapper">
+          <div className={classes.contactBlock}>
+            <div className={classes.iconWrapper}>
               <a
                 href={`${linkedInlink}`}
                 target="_blank"
@@ -71,21 +73,21 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink }) => {
                 <i className="fab fa-fw fa-linkedin"></i>
               </a>
             </div>
-            <div className="details">
+            <div className={classes.contactDetails}>
               <a
                 href={`${linkedInlink}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h5 className="heading">{CONTACT_SEE}</h5>
+                <h5 className={classes.contactHeading}>{CONTACT_SEE}</h5>
                 <span>{CONTACT_LINKEDIN}</span>
               </a>
             </div>
           </div>
         )}
         {githubLink && (
-          <div className="contact-block">
-            <div className="icon-wrapper">
+          <div className={classes.contactBlock}>
+            <div className={classes.iconWrapper}>
               <a
                 href={`${githubLink}`}
                 target="_blank"
@@ -94,13 +96,13 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink }) => {
                 <i className="fab fa-fw fa-github"></i>
               </a>
             </div>
-            <div className="details">
+            <div className={classes.contactDetails}>
               <a
                 href={`${githubLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h5 className="heading">{CONTACT_CHECK}</h5>
+                <h5 className={classes.contactHeading}>{CONTACT_CHECK}</h5>
                 <span>{CONTACT_GITHUB}</span>
               </a>
             </div>

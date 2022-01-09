@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import BlockContent from "@sanity/block-content-to-react";
 import Modal from "./Modal";
+import useStyles from "./style"
 
 function getWorkDate(date) {
   const d = new Date(date);
@@ -24,10 +25,10 @@ const WorkBox = ({
   },
 }) => {
   let currentStatus = endDate ? getWorkDate(endDate) : "Current";
-
+const classes = useStyles();
   return (
-    <div className="work-item">
-      <div className="image-side">
+    <div className={classes.workItem}>
+      <div className={classes.imageSide}>
         <div className="image-wrapper">
           <img
             src={companyImage.asset.url}
@@ -37,20 +38,20 @@ const WorkBox = ({
           />
         </div>
       </div>
-      <div className="detail-side">
-        <div className="title-wrapper">
-          <div className="title">
-            <h2 className="role">{role}</h2>
-            <h2 className="company">{companyName}</h2>
-            <h2 className="duration">
+      <div className={classes.detailSide}>
+        <div className={classes.titleWrapper}>
+          <div className={classes.title}>
+            <h2 className={classes.role}>{role}</h2>
+            <h2 className={classes.company}>{companyName}</h2>
+            <h2 className={classes.duration}>
               {/* {`${getWorkDate(startDate)} - ${getWorkDate(endDate)}`} */}
               {`${getWorkDate(startDate)} - ${currentStatus}`}
             </h2>
-            <h2 className="location">{location}</h2>
+            <h2 className={classes.location}>{location}</h2>
           </div>
         </div>
 
-        <div className="task-wrapper">
+        <div className={classes.taskWrapper}>
           {isSlider ? (
             <Modal id={_id} name={companyName} data={tasks} />
           ) : (

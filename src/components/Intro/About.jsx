@@ -8,14 +8,11 @@ import {
   PROFILE_TITLE,
   PROFILE_SUBTITLE,
   PROFILE_GREETING,
-  // PROFILE_DOWNLOAD,
 } from "../../constants/lang";
-// import {
-//   CV_FILE_DOWNLOAD,
-//   CV_FILE_NAME
-//   } from "../constants/assets";
+import useStyles from "./style";
 
 const About = ({ userImage, githubLink, desc, linkedInlink }) => {
+  const classes = useStyles()
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -24,29 +21,30 @@ const About = ({ userImage, githubLink, desc, linkedInlink }) => {
     }
   }, [controls, inView]);
   return (
-    <section className="nav-section" id="about">
+    <section className={classes.aboutSection} id="about">
       <div className="container">
         <SectionHeader title={PROFILE_TITLE} subtitle={PROFILE_SUBTITLE} />
 
         <motion.div
-          className="about-content"
+          className={classes.aboutContent}
           ref={ref}
           animate={controls}
           variants={titleVariants}
           initial="hidden"
         >
-          <div className="image-wrapper">
+          <div className={classes.imageWrapper}>
             <img
               src={userImage.asset.url}
+              className={classes.image}
               alt={PROFILE_SUBTITLE}
               width="100%"
               height="100%"
             />
           </div>
           <div className="text-content">
-            <h3 className="content-heading">{PROFILE_GREETING}</h3>
-            <p>{desc}</p>
-            <hr />
+            <h3 className={classes.contentHeading}>{PROFILE_GREETING}</h3>
+            <p className={classes.contentText}>{desc}</p>
+            <hr className={classes.contentHR}/>
             <div className="text-content-footer">
               {/* <div className="button-wrapper">
                   {CV_FILE_DOWNLOAD ?(<a

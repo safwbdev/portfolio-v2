@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import useStyles from "./style"
 
 const SkillSection = ({ title, data }) => {
+  const classes = useStyles()
     const controls = useAnimation();
     const [ref, inView] = useInView();
     useEffect(() => {
@@ -12,7 +14,7 @@ const SkillSection = ({ title, data }) => {
     }, [controls, inView]);
     return (
       <motion.div
-        className="skill-content"
+        className={classes.skillContent}
         ref={ref}
         animate={controls}
         initial="hidden"
@@ -21,7 +23,7 @@ const SkillSection = ({ title, data }) => {
           hidden: { opacity: 0, y: 300 },
         }}
       >
-        <h4>{title}</h4>
+        <h4 className={classes.title}>{title}</h4>
         <div className="skillset">
 
         {data &&
@@ -32,7 +34,7 @@ const SkillSection = ({ title, data }) => {
               </span>
             );
             return (
-              <span key={index} className="stack">
+              <span key={index} className={classes.stack}>
                 {content}
               </span>
             );

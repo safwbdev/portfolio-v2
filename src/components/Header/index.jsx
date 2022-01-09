@@ -4,35 +4,38 @@ import { links } from "../../constants/linkData";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 import { motion } from "framer-motion";
 import { headerVariants } from "../../constants/variants";
+import useStyles from "./style"
 
 const Index = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+  const classes = useStyles()
 
   const handleClose = () => {
     setAnchorEl(null);
   };
   return (
-    <motion.header variants={headerVariants} initial="hidden" animate="visible">
+    <motion.header variants={headerVariants} initial="hidden" animate="visible" className={classes.header}>
       <div className="brand">
         <a href="/">{HEADER_BRAND}</a>
       </div>
-      <ul className="nav-links">
+      <ul className={classes.navLinks}>
         {links &&
-          links.map((link, index) => {
+          links.map(({url,
+            label}) => {
             return (
-              <li className="nav-link" key={index}>
-                <a href={link.url}>{link.label}</a>
+              <li className={classes.navLink} key={label}>
+                <a className={classes.navLinkText} href={url}>{label}</a>
               </li>
             );
           })}
       </ul>
-      <div className="mobile-nav">
+      <div className={classes.mobileNav}>
         <Button
           aria-controls="simple-menu"
-          className="hamburger"
+          className={classes.hamburger}
           aria-haspopup="true"
           onClick={handleClick}
         >
@@ -40,7 +43,7 @@ const Index = () => {
         </Button>
         <Menu
           id="simple-menu"
-          className="mobile-menu"
+          className={classes.mobileMenu}
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}

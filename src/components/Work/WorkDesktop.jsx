@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import WorkBox from "./WorkBox";
+import useStyles from "./style"
 
 const WorkDesktop = ({ data }) => {
+  const classes = useStyles()
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -13,7 +15,7 @@ const WorkDesktop = ({ data }) => {
   }, [controls, inView]);
   return (
     <motion.div
-      className="work-grid"
+      className={classes.workGrid}
       ref={ref}
       animate={controls}
       initial="hidden"

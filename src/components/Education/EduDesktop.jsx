@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import EduBox from "./EduBox";
+import useStyles from "./style"
 
 const EduDesktop = ({ data }) => {
+  const classes = useStyles();
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -13,7 +15,7 @@ const EduDesktop = ({ data }) => {
   }, [controls, inView]);
   return (
     <motion.div
-      className="edu-grid"
+      className={classes.eduGrid}
       ref={ref}
       animate={controls}
       initial="hidden"

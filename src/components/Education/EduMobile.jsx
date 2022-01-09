@@ -4,8 +4,10 @@ import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
 import { WORK_SETTINGS } from "../../constants/sliderSettings";
 import EduBox from "./EduBox";
+import useStyles from "./style"
 
 const EduMobile = ({ data }) => {
+  const classes = useStyles();
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -15,7 +17,7 @@ const EduMobile = ({ data }) => {
   }, [controls, inView]);
   return (
     <motion.div
-      className="edu-slider"
+      className={classes.eduSlider}
       ref={ref}
       animate={controls}
       initial="hidden"

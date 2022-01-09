@@ -2,6 +2,7 @@ import React from "react";
 import { SKILL_TITLE } from "../../constants/lang";
 import SkillSection from "./SkillSection";
 import SectionHeader from "../SectionHeader"
+import useStyles from "./style"
 
 const Skills =({essential, technical, framework, library,
     database,
@@ -9,10 +10,11 @@ const Skills =({essential, technical, framework, library,
     os,
     tools,
     design})=> {
+      const classes = useStyles()
 
    return (
         <>
-          <section className="nav-section" id="skills">
+          <section className={classes.skillSection} id="skills">
             <div className="container">
               <SectionHeader title={SKILL_TITLE} />
               <div className="skill-section">

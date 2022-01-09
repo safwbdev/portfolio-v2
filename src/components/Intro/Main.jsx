@@ -6,18 +6,22 @@ import {
   socialVariants1,
 } from "../../constants/variants";
 import { motion } from "framer-motion";
+import useStyles from "./style";
 
 const Main = ({ name, role, githubLink, linkedInlink }) => {
+
+  const classes = useStyles()
   return (
-    <section className="hero main-bg">
-      <div className="inner-text">
-        <motion.h1 variants={titleVariants} initial="hidden" animate="visible">
+    <section className={classes.hero}>
+      <div className={classes.innerText}>
+        <motion.h1 variants={titleVariants} initial="hidden" animate="visible" className={classes.title}>
           {name}
         </motion.h1>
         <motion.h2
           variants={subTitleVariants}
           initial="hidden"
           animate="visible"
+          className={classes.subtitle}
         >
           {role}
         </motion.h2>
@@ -33,7 +37,7 @@ const Main = ({ name, role, githubLink, linkedInlink }) => {
         initial="hidden"
         animate="visible"
       >
-        <Social github={githubLink} linkedin={linkedInlink} />
+        <Social github={githubLink} linkedin={linkedInlink} isHero />
       </motion.span>
     </section>
   );
