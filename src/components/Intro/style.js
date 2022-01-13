@@ -50,6 +50,9 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       fontSize: "5rem",
     },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "0.5em",
+    },
   },
   subtitle: {
     fontSize: "1.5rem",

@@ -10,6 +10,7 @@ import {
   Contact,
   Future,
   Projects,
+  MobileMenu,
 } from "./components";
 import sanityClient from "./client.js";
 import { PROFILE_LOADING } from "./constants/lang";
@@ -278,6 +279,7 @@ function App() {
       <Work data={workData} />
       <Education data={eduData} />
       <Contact data={mainData} />
+      <MobileMenu />
     </motion.div>
   ) : (
     <CircularProgressWithLabel value={percentageData} />

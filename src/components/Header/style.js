@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   header: {
     width: "100%",
     padding: "20px 20px 0",
-    display: "flex",
+    display: "none",
     justifyContent: "space-between",
     alignItems: "center",
     position: "fixed",
@@ -12,6 +12,10 @@ export default makeStyles((theme) => ({
     left: 0,
     zIndex: 10,
     transition: "all 0.3 ease",
+
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+    },
     "& a": {
       textTransform: "uppercase",
       fontWeight: "bold",
@@ -57,12 +61,17 @@ export default makeStyles((theme) => ({
   },
   mobileMenu: {
     "& .MuiMenu-paper": {
-      top: "1em !important",
+      top: "unset !important",
+      left: "unset !important",
+      bottom: "5.5em",
+      right: "0.5em",
+      borderRadius: "8px",
       "& ul": {
         border: "1px solid #252525",
         padding: 0,
         background: "#101010",
         borderRadius: 0,
+
         "& .MuiListItem-button:not(:last-child)": {
           borderBottom: "1px solid #b7b7b7",
         },
@@ -73,9 +82,17 @@ export default makeStyles((theme) => ({
     },
   },
   hamburger: {
-    background: "transparent",
+    background: "#5093e5",
     border: "none",
     color: "#ffffff",
     fontSize: "2rem",
+    [theme.breakpoints.down("sm")]: {
+      margin: 0,
+      top: "auto",
+      right: 20,
+      bottom: 20,
+      left: "auto",
+      position: "fixed",
+    },
   },
 }));

@@ -11,6 +11,9 @@ export default makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     margin: "0 20px 20px",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   socialList: {
     margin: "0",
