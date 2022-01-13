@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   header: {
     width: "100%",
     padding: "20px 20px 0",
-    display: "none",
+    display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     position: "fixed",
@@ -13,9 +13,6 @@ export default makeStyles((theme) => ({
     zIndex: 10,
     transition: "all 0.3 ease",
 
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-    },
     "& a": {
       textTransform: "uppercase",
       fontWeight: "bold",
