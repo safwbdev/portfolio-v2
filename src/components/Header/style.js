@@ -50,11 +50,23 @@ export default makeStyles((theme) => ({
     },
   },
   mobileNav: {
-    position: "relative",
+    // position: "relative",
     display: "none",
+    margin: 0,
+    top: "auto",
+    right: 20,
+    bottom: 20,
+    left: "auto",
+    position: "fixed",
     [theme.breakpoints.down("sm")]: {
       display: "block",
     },
+  },
+  hamburger: {
+    backgroundColor: "#5093e5 !important",
+    border: "none !important",
+    color: "#ffffff !important",
+    fontSize: "1.5rem !important",
   },
   mobileMenu: {
     "& .MuiMenu-paper": {
@@ -69,6 +81,9 @@ export default makeStyles((theme) => ({
         background: "#101010",
         borderRadius: 0,
 
+        "& .MuiListItem-button": {
+          padding: "16px",
+        },
         "& .MuiListItem-button:not(:last-child)": {
           borderBottom: "1px solid #b7b7b7",
         },
@@ -76,20 +91,6 @@ export default makeStyles((theme) => ({
           color: "1px solid #ffffff",
         },
       },
-    },
-  },
-  hamburger: {
-    background: "#5093e5",
-    border: "none",
-    color: "#ffffff",
-    fontSize: "2rem",
-    [theme.breakpoints.down("sm")]: {
-      margin: 0,
-      top: "auto",
-      right: 20,
-      bottom: 20,
-      left: "auto",
-      position: "fixed",
     },
   },
 }));

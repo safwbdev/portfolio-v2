@@ -7,26 +7,29 @@ import useStyles from "./style";
 
 const MobileMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget);
   };
   const classes = useStyles();
 
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const icon = Boolean(anchorEl) ? "fa-times" : "fa-bars";
+
   return (
     <div className={classes.mobileNav}>
       <Fab
-        aria-controls="simple-menu"
+        aria-controls="mobile-menu"
         className={classes.hamburger}
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <i className="fa fa-bars"></i>
+        <i className={`fas ${icon}`}></i>
       </Fab>
       <Menu
-        id="simple-menu"
+        id="mobile-menu"
         className={classes.mobileMenu}
         anchorEl={anchorEl}
         keepMounted

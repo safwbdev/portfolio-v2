@@ -64,7 +64,7 @@ export default makeStyles((theme) => ({
 
   scrollDown: {
     [theme.breakpoints.down("sm")]: {
-      display: "none",
+      // display: "none",
     },
   },
 

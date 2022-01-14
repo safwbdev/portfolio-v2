@@ -41,12 +41,7 @@ function CircularProgressWithLabel(props) {
   return (
     <div className={classes.loadScreen}>
       <Box position="relative" display="inline-flex" marginBottom={3}>
-        <CircularProgress
-          size={80}
-          color="#5093e5"
-          variant="determinate"
-          {...props}
-        />
+        <CircularProgress size={80} variant="determinate" {...props} />
         <Box
           top={0}
           left={0}

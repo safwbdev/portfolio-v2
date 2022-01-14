@@ -2,6 +2,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   futureContainer: {
+    height: "100vh",
+    padding: "100px 0",
     "& .container": {
       backgroundColor: "#5093e5",
       padding: "100px 0",
