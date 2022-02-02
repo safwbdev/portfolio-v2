@@ -69,3 +69,6 @@ export const CONTACT_SEE = "See me on";
 export const CONTACT_LINKEDIN = "LinkedIn";
 export const CONTACT_CHECK = "Check out my";
 export const CONTACT_GITHUB = "Github";
+export const CONTACT_DOWNLOAD = "Download my";
+export const CONTACT_RESUME = "Resume";
+

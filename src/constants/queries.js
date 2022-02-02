@@ -6,8 +6,7 @@ export const PROFILE_QUERY = `*[_type == "user"]{
     location,
     githubLink,
     linkedInlink,
-    downloadUrl,
-    fileName,
+    fileUpload,
     desc,
     userImage{
         asset->{

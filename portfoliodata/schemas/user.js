@@ -61,9 +61,10 @@ export default {
       },
     },
     {
-      title: "Download URL",
-      name: "downloadUrl",
-      type: "string",
+      title: "File Upload",
+      name: "fileUpload",
+      type: "file",
+     
     },
   ],
 };

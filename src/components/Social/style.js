@@ -22,7 +22,7 @@ export default makeStyles((theme) => ({
   },
   socialListItem: {
     display: "inline-block",
-    marginRight: "10px",
+    marginRight: "20px",
     "&:last-child": {
       marginRight: 0,
     },

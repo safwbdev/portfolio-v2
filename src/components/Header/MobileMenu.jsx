@@ -1,22 +1,19 @@
 import React, { useState } from "react";
-
 import { links } from "../../constants/linkData";
 import { Menu, MenuItem, Fab } from "@material-ui/core";
-
 import useStyles from "./style";
 
 const MobileMenu = () => {
+  const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
+  const icon = Boolean(anchorEl) ? "fa-times" : "fa-bars";
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
   };
-  const classes = useStyles();
-
   const handleClose = () => {
     setAnchorEl(null);
-  };
+  };  
 
-  const icon = Boolean(anchorEl) ? "fa-times" : "fa-bars";
 
   return (
     <div className={classes.mobileNav}>

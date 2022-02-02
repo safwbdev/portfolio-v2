@@ -141,4 +141,12 @@ export default makeStyles((theme) => ({
     margin: "30px 0",
     border: "1px solid #5093e5",
   },
+  textContentFooter:{
+    display:"flex",
+    justifyContent:"space-between",
+    alignItems:"center",
+  },
+  buttonWrapper:{
+    display:"flex", 
+  }
 }));

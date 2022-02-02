@@ -53,6 +53,13 @@ function App() {
   const [statusData, setStatus] = useState(false);
   const [percentageData, setPercentage] = useState(0);
 
+  function getDownloadUrl(ref){
+    let formatUri = ref.replace("file-","")
+    let convertUri = formatUri.replace("-",".")
+    let fullUrl = `https://cdn.sanity.io/files/${process.env.REACT_APP_API_KEY}/production/${convertUri}?dl`
+    return fullUrl;
+  }
+
   const loadingPercent = (para) => {
     let temp = (para / 15) * 100;
     setPercentage(parseInt(temp));
@@ -227,7 +234,7 @@ function App() {
       animate="visible"
     >
       <Header />
-      <Intro data={mainData} />
+      <Intro data={mainData} getDownloadUrl={getDownloadUrl} />
       <Projects title="Projects" data={projectData} />
       <Skills
         essential={essentialData}
@@ -243,7 +250,7 @@ function App() {
       <Future learning={learningData} future={futureData} />
       <Work data={workData} />
       <Education data={eduData} />
-      <Contact data={mainData} />
+      <Contact data={mainData} getDownloadUrl={getDownloadUrl} />
       <MobileMenu />
     </motion.div>
   ) : (

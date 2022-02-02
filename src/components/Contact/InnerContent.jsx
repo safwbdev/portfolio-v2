@@ -8,10 +8,12 @@ import {
   CONTACT_GITHUB,
   CONTACT_LINKEDIN,
   CONTACT_SEE,
+  CONTACT_DOWNLOAD,
+  CONTACT_RESUME,
 } from "../../constants/lang";
 import useStyles from "./style"
 
-const InnerContent = ({ email, phone, linkedInlink, githubLink }) => {
+const InnerContent = ({ email, phone, linkedInlink, githubLink, downloadLink }) => {
   const classes = useStyles()
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -104,6 +106,29 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink }) => {
               >
                 <h5 className={classes.contactHeading}>{CONTACT_CHECK}</h5>
                 <span>{CONTACT_GITHUB}</span>
+              </a>
+            </div>
+          </div>
+        )}
+        {downloadLink && (
+          <div className={classes.downloadBlock}>
+            <div className={classes.iconWrapper}>
+              <a
+                href={`${downloadLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fas fa-fw fa-file-download"></i>
+              </a>
+            </div>
+            <div className={classes.contactDetails}>
+              <a
+                href={`${downloadLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h5 className={classes.contactHeading}>{CONTACT_DOWNLOAD}</h5>
+                <span>{CONTACT_RESUME}</span>
               </a>
             </div>
           </div>

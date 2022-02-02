@@ -136,6 +136,56 @@ export default makeStyles((theme) => ({
       marginBottom: "3em",
     },
   },
+  downloadBlock: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "30px",
+
+    "&:hover i": {
+      fontSize: "3rem",
+      transform: "translate3d(0, 0, 0)",
+      transition: "all 0.3s linear 0s",
+    },
+
+    "& span": {
+      fontSize: "1rem",
+      color: "#ffffff",
+      fontWeight: "bold",
+      transform: "translate3d(0, 0, 0)",
+      transition: "all 0.3s linear 0s",
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "1.5rem",
+      },
+    },
+    "& a": {
+      fontSize: "1rem",
+      color: "#ffffff",
+      fontWeight: "bold",
+      transform: "translate3d(0, 0, 0)",
+      transition: "all 0.3s linear 0s",
+      [theme.breakpoints.up("sm")]: {
+        fontSize: "1.5rem",
+      },
+    },
+    "a:hover": {
+      opacity: "0.7",
+    },
+    "& h5": {
+      color: "#b7b7b7",
+      fontSize: "1.25rem",
+      textTransform: "uppercase",
+      [theme.breakpoints.up("sm")]: {
+        padding: "10px 0",
+      },
+    },
+
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "3em",
+    },
+  },
   iconWrapper: {
     "& i": {
       color: "#5093e5",

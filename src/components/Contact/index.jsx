@@ -4,9 +4,9 @@ import InnerContent from "./InnerContent";
 import { CONTACT_SUBTITLE, CONTACT_TITLE } from "../../constants/lang";
 import useStyles from "./style"
 
-const Contact = ({ data }) => {
+const Contact = ({ data, getDownloadUrl }) => {
   const classes = useStyles()
-  const { email, phone, linkedInlink, githubLink } = data[0];
+  const { email, phone, linkedInlink, githubLink, fileUpload } = data[0];
 
   return (
     <div className={classes.contactSection} id="contact">
@@ -17,6 +17,7 @@ const Contact = ({ data }) => {
           phone={phone}
           linkedInlink={linkedInlink}
           githubLink={githubLink}
+          downloadLink={getDownloadUrl(fileUpload.asset._ref)}
         />
       </div>
     </div>
