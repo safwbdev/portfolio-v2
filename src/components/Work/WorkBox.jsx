@@ -25,13 +25,15 @@ const WorkBox = ({
   },
 }) => {
   let currentStatus = endDate ? getWorkDate(endDate) : "Current";
-const classes = useStyles();
+  const classes = useStyles();
+  const image = companyImage?.asset.url ? companyImage.asset.url : "https://via.placeholder.com/468x60?text=Visit+Blogging.com+Now"
+
   return (
     <div className={classes.workItem}>
       <div className={classes.imageSide}>
         <div className="image-wrapper">
           <img
-            src={companyImage.asset.url}
+            src={image}
             alt={companyName}
             width="100%"
             height="100%"

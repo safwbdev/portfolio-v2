@@ -10,7 +10,7 @@ import {
 import SectionHeader from "../SectionHeader";
 import useStyles from "./style";
 
-const Future = ({ learning, future }) => {
+const Future = ({ data }) => {
   const classes = useStyles();
 
   const controls = useAnimation();
@@ -27,19 +27,19 @@ const Future = ({ learning, future }) => {
         <div className={classes.futureItem}>
           <h2>{FUTURE_LEARNING}</h2>
           <ul>
-            {learning &&
-              learning.map(({ name }, index) => {
-                return <li key={index}>{name}</li>;
-              })}
+            {data && data
+              .filter((skill)=>skill.skillStatus === "learning")
+              .map(({ name }, index) => (<li key={index}>{name}</li>)
+              )}
           </ul>
         </div>
         <div className={classes.futureItem}>
           <h2>{FUTURE_PLANNING}</h2>
           <ul>
-            {future &&
-              future.map(({ name }, index) => {
-                return <li key={index}>{name}</li>;
-              })}
+          {data && data
+              .filter((skill)=>skill.skillStatus === "future")
+              .map(({ name }, index) => (<li key={index}>{name}</li>)
+              )}
           </ul>
         </div>
       </div>
@@ -50,6 +50,7 @@ const Future = ({ learning, future }) => {
     <motion.div
       id="future"
       className={classes.futureContainer}
+      style={{display:"none"}}
       ref={ref}
       animate={controls}
       initial="hidden"
@@ -58,7 +59,7 @@ const Future = ({ learning, future }) => {
         hidden: { opacity: 0, y: 300 },
       }}
     >
-      <div className="container">
+      <div className="container" >
         <SectionHeader
           title={FUTURE_TITLE}
           subtitle={FUTURE_SUBTITLE}

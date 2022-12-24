@@ -12,7 +12,7 @@ import {
   Projects,
   MobileMenu,
 } from "./components";
-import LoadScreen from "./components/LoadScreen"
+import LoadScreen from "./components/LoadScreen";
 import sanityClient from "./client.js";
 import { motion } from "framer-motion";
 import { appVariants } from "./constants/variants";
@@ -53,10 +53,10 @@ function App() {
   const [statusData, setStatus] = useState(false);
   const [percentageData, setPercentage] = useState(0);
 
-  function getDownloadUrl(ref){
-    let formatUri = ref.replace("file-","")
-    let convertUri = formatUri.replace("-",".")
-    let fullUrl = `https://cdn.sanity.io/files/${process.env.REACT_APP_API_KEY}/production/${convertUri}?dl`
+  function getDownloadUrl(ref) {
+    let formatUri = ref.replace("file-", "");
+    let convertUri = formatUri.replace("-", ".");
+    let fullUrl = `https://cdn.sanity.io/files/${process.env.REACT_APP_API_KEY}/production/${convertUri}?dl`;
     return fullUrl;
   }
 
