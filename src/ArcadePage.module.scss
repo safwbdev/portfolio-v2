@@ -23,6 +23,49 @@
         color: lime;
         margin-bottom: 1em;
     }
+    .slider{
+        z-index: 1 ;
+
+        button{
+            top: 110%;
+            width: 4rem;
+            width: 10%;
+            height: 4rem;
+            
+            &:nth-child(1){
+                left: 2%;
+                &::before{
+                    content: 'prev';
+                    background: black;
+                    border: .2em solid lime;
+                    padding: 1em;
+                    color: lime;
+                    font-family: 'Press Start 2P', cursive;
+                }
+                
+            }
+            
+            &:nth-child(3){
+                right: 2%;
+                
+                &::before{
+                    background: black;
+                    color: lime;
+                    border: .2em solid lime;
+                    padding: 1em;
+                    content: 'next';
+                    font-family: 'Press Start 2P', cursive;
+                }
+
+            }
+        }
+
+    
+    }
+     .slick-prev{
+     
+     }
+ 
 }
 
 .gamesContainer{
@@ -30,6 +73,9 @@
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.gameOuter{
+    margin:  0 1em;
 }
 .gameBox{
     background: black;
@@ -44,12 +90,20 @@
     .title{
         margin: 1em;
         text-align: center;
-
+        font-size: 1.5em;
+        color: lime;
+        
     }
     .links{
+        color: lime;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 1em 0;
+
+        a, span{
+            margin: 1em 0;
+        }
     }
 }

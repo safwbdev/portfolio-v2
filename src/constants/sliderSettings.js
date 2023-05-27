@@ -47,6 +47,53 @@ export const PERSONAL_PROJECT_SETTINGS = {
     },
   ],
 };
+export const GAME_PROJECT_SETTINGS = {
+  speed: 400,
+  slidesToShow: 4,
+  arrows: true,
+  slidesToScroll: 1,
+  infinite: true,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+      },
+    },
+
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        centerMode: true,
+
+        autoplay: false,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        centerMode: true,
+        autoplay: false,
+      },
+    },
+  ],
+};
 export const CLIENT_PROJECT_SETTINGS = {
   dots: true,
   infinite: false,
