@@ -1,0 +1,55 @@
+.arcadePage{
+    align-items: center;
+    background-color: red;
+    background: url('https://images.pexels.com/photos/4836513/pexels-photo-4836513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    display: flex;
+    font-family: 'Press Start 2P', cursive;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+
+    &::after{
+        background-blend-mode: multiply;
+        background-color: rgba(0,0,0,.7);
+        content: '';
+        height: 100vh;
+        position: absolute;
+        width: 100%;
+    }
+
+    h1{
+        z-index: 1;
+        color: lime;
+        margin-bottom: 1em;
+    }
+}
+
+.gamesContainer{
+    z-index: 1;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.gameBox{
+    background: black;
+    border: .3em solid lime;
+    flex: 1;
+    margin: 1em;
+    padding: 1em;
+    
+    img{
+        width: 100%;
+    }
+    .title{
+        margin: 1em;
+        text-align: center;
+
+    }
+    .links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1em 0;
+    }
+}
