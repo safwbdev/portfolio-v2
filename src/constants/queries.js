@@ -1,4 +1,59 @@
-export const PROFILE_QUERY = `*[_type == "user"]{
+const cmsQuery = `*[_type == "skills" && skillType == "cms"]  | order(name){
+    name,
+    icon,
+    skillType
+}`;
+const databaseQuery = `*[_type == "skills" && skillType == "database"]  | order(name){
+    name,
+    icon,
+    skillType
+}`;
+const designQuery = `*[_type == "skills" && skillType == "design"]  | order(name){
+    name,
+    icon,
+    skillType
+}`;
+const educationQuery = `*[_type == "education"] | order(endDate desc) {
+    schoolName,
+    field,
+    location,
+    startDate,
+    endDate,
+    eduImage{
+        asset->{
+            _id,
+            url
+        },
+        alt
+    }
+}`;
+const essentialQuery = `*[_type == "skills" && skillType == "essential"] | order(name){
+    name,
+    icon,
+    skillType
+}`;
+const frameworkQuery = `*[_type == "skills" && skillType == "framework"]  | order(name){
+    name,
+    icon,
+    skillType
+}`;
+const futureQuery = `*[_type == "future" && skillStatus == "future"]{
+    name
+}`;
+const learningQuery = `*[_type == "future" && skillStatus == "learning"]  | order(name){
+    name
+}`;
+const libraryQuery = `*[_type == "skills" && skillType == "library"]  | order(name){
+    name,
+    icon,
+    skillType
+}`;
+const osQuery = `*[_type == "skills" && skillType == "os"]  | order(name){
+    name,
+    icon,
+    skillType
+}`;
+const profileQuery = `*[_type == "user"]{
     name,
     role,
     phone,
@@ -17,47 +72,33 @@ export const PROFILE_QUERY = `*[_type == "user"]{
     }         
 }`;
 
-export const ESSENTIAL_QUERY = `*[_type == "skills" && skillType == "essential"] | order(name){
+const projectsQuery = `*[_type == "project" ] | order(projectType){
+    title,
+    desc,
+    projectType,
+    githubLink,
+    demoLink,
+    tags,
+    projectImage{
+        asset->{
+            _id,
+            url
+        },
+        alt
+    }
+}`;
+
+const technicalQuery = `*[_type == "skills" && skillType == "technical"]  | order(name){
     name,
     icon,
     skillType
 }`;
-export const TECHNICAL_QUERY = `*[_type == "skills" && skillType == "technical"]  | order(name){
+const toolsQuery = `*[_type == "skills" && skillType == "tools"]  | order(name){
     name,
     icon,
     skillType
 }`;
-export const FRAMEWORK_QUERY = `*[_type == "skills" && skillType == "framework"]  | order(name){
-    name,
-    icon,
-    skillType
-}`;
-export const LIBRARY_QUERY = `*[_type == "skills" && skillType == "library"]  | order(name){
-    name,
-    icon,
-    skillType
-}`;
-export const DATABASE_QUERY = `*[_type == "skills" && skillType == "database"]  | order(name){
-    name,
-    icon,
-    skillType
-}`;
-export const CMS_QUERY = `*[_type == "skills" && skillType == "cms"]  | order(name){
-    name,
-    icon,
-    skillType
-}`;
-export const OS_QUERY = `*[_type == "skills" && skillType == "os"]  | order(name){
-    name,
-    icon,
-    skillType
-}`;
-export const TOOLS_QUERY = `*[_type == "skills" && skillType == "tools"]  | order(name){
-    name,
-    icon,
-    skillType
-}`;
-export const WORK_QUERY = `*[_type == "work"]  | order(startDate desc){
+const workQuery = `*[_type == "work"]  | order(startDate desc){
     _id,
     companyName,
     role,
@@ -73,44 +114,21 @@ export const WORK_QUERY = `*[_type == "work"]  | order(startDate desc){
       alt
     }
 }`;
-export const EDUCATION_QUERY = `*[_type == "education"] | order(endDate desc) {
-    schoolName,
-    field,
-    location,
-    startDate,
-    endDate,
-    eduImage{
-        asset->{
-            _id,
-            url
-        },
-      alt
-    }
-}`;
-export const DESIGN_QUERY = `*[_type == "skills" && skillType == "design"]  | order(name){
-    name,
-    icon,
-    skillType
-}`;
-export const LEARNING_QUERY = `*[_type == "future" && skillStatus == "learning"]  | order(name){
-    name
-}`;
-export const FUTURE_QUERY = `*[_type == "future" && skillStatus == "future"]{
-    name
-}`;
 
-export const PROJECTS_QUERY = `*[_type == "project" ] | order(projectType){
-    title,
-    desc,
-    projectType,
-    githubLink,
-    demoLink,
-    tags,
-    projectImage{
-        asset->{
-            _id,
-            url
-        },
-        alt
-    }
-}`;
+export const query = {
+  cms: cmsQuery,
+  database: databaseQuery,
+  design: designQuery,
+  education: educationQuery,
+  essential: essentialQuery,
+  framework: frameworkQuery,
+  future: futureQuery,
+  learning: learningQuery,
+  library: libraryQuery,
+  os: osQuery,
+  profile: profileQuery,
+  projects: projectsQuery,
+  technical: technicalQuery,
+  tools: toolsQuery,
+  work: workQuery,
+};
