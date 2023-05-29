@@ -16,6 +16,7 @@ import sanityClient from "./client.js";
 import { motion } from "framer-motion";
 import { appVariants } from "./constants/variants";
 import { query } from "./constants/queries";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [mainData, setMain] = useState(null);
@@ -35,8 +36,9 @@ function App() {
   const [projectData, setProject] = useState(null);
   const [statusData, setStatus] = useState(false);
   const [percentageData, setPercentage] = useState(0);
+  const [move, setMove] = useState(false);
 
-  console.log(query.cms);
+  // console.log(query.cms);
 
   function getDownloadUrl(ref) {
     let formatUri = ref.replace("file-", "");
@@ -209,6 +211,43 @@ function App() {
     };
     getAll();
   }, []);
+
+  const pattern = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+    "Enter",
+  ];
+  let current = 0;
+
+  const navigate = useNavigate();
+
+  const keyHandler = function (event) {
+    if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
+      console.log("A");
+      current = 0;
+      return;
+    }
+    current++;
+
+    if (pattern.length === current) {
+      current = 0;
+      setMove(true);
+    }
+  };
+
+  document.addEventListener("keydown", keyHandler, false);
+
+  useEffect(() => {
+    if (move) navigate("/arcade");
+  }, [move, navigate]);
 
   return statusData ? (
     <motion.div
