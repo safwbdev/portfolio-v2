@@ -12,11 +12,11 @@ import {
   MobileMenu,
 } from "../components";
 import LoadScreen from "../components/LoadScreen";
-import sanityClient from "../client.js";
 import { motion } from "framer-motion";
 import { appVariants } from "../constants/variants";
-import { QUERY } from "../constants/queries";
+import { QUERY, DATA_TYPE, PATTERN } from "../constants/queries";
 import { useNavigate } from "react-router-dom";
+import { retrieveData } from "../utils";
 
 // import { useProfileContext } from "../context/ProfileContext";
 
@@ -39,198 +39,85 @@ function App() {
   const [statusData, setStatus] = useState(false);
   const [percentageData, setPercentage] = useState(0);
   const [move, setMove] = useState(false);
+  const [count, setCount] = useState([]);
 
   const loadingPercent = (para) => {
     let temp = (para / 15) * 100;
     setPercentage(parseInt(temp));
   };
 
-  useEffect(() => {
-    const getAll = async () => {
-      let count = 0;
-      try {
-        const data = await sanityClient.fetch(QUERY.profile);
-        if (data) {
-          setMain(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.essential);
-        if (data) {
-          setEssential(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.technical);
-        if (data) {
-          setTechnical(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.framework);
-        if (data) {
-          setFramework(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.library);
-        if (data) {
-          setLibrary(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.os);
-        if (data) {
-          setOs(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.cms);
-        if (data) {
-          setCms(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.design);
-        if (data) {
-          setDesign(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.database);
-        if (data) {
-          setDatabase(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.tools);
-        if (data) {
-          setTools(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.learning);
-        if (data) {
-          setLearning(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.future);
-        if (data) {
-          setFuture(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.work);
-        if (data) {
-          setWork(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.education);
-        if (data) {
-          setEdu(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-      try {
-        const data = await sanityClient.fetch(QUERY.projects);
-        if (data) {
-          setProject(data);
-          count++;
-          loadingPercent(count);
-        }
-      } catch (error) {
-        console.log(error);
-      }
+  const setPortfolioData = (value) => {
+    switch (value.name) {
+      case DATA_TYPE.CMS:
+        retrieveData(value.db, setCms, setCount);
+        break;
+      case DATA_TYPE.DATABASE:
+        retrieveData(value.db, setDatabase, setCount);
+        break;
+      case DATA_TYPE.DESIGN:
+        retrieveData(value.db, setDesign, setCount);
+        break;
+      case DATA_TYPE.EDUCATION:
+        retrieveData(value.db, setEdu, setCount);
+        break;
+      case DATA_TYPE.ESSENTIAL:
+        retrieveData(value.db, setEssential, setCount);
+        break;
+      case DATA_TYPE.FRAMEWORK:
+        retrieveData(value.db, setFramework, setCount);
+        break;
+      case DATA_TYPE.FUTURE:
+        retrieveData(value.db, setFuture, setCount);
+        break;
+      case DATA_TYPE.LEARNING:
+        retrieveData(value.db, setLearning, setCount);
+        break;
+      case DATA_TYPE.LIBRARY:
+        retrieveData(value.db, setLibrary, setCount);
+        break;
+      case DATA_TYPE.OS:
+        retrieveData(value.db, setOs, setCount);
+        break;
+      case DATA_TYPE.PROFILE:
+        retrieveData(value.db, setMain, setCount);
+        break;
+      case DATA_TYPE.PROJECTS:
+        retrieveData(value.db, setProject, setCount);
+        break;
+      case DATA_TYPE.TECHNICAL:
+        retrieveData(value.db, setTechnical, setCount);
+        break;
+      case DATA_TYPE.TOOLS:
+        retrieveData(value.db, setTools, setCount);
+        break;
+      case DATA_TYPE.WORK:
+        retrieveData(value.db, setWork, setCount);
+        break;
 
-      if (count >= 15) {
-        setTimeout(setStatus(true), 2000);
-      }
-    };
-    getAll();
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    QUERY.map((data) => {
+      setPortfolioData(data);
+      return null;
+    });
   }, []);
 
-  const pattern = [
-    "ArrowUp",
-    "ArrowUp",
-    "ArrowDown",
-    "ArrowDown",
-    "ArrowLeft",
-    "ArrowRight",
-    "ArrowLeft",
-    "ArrowRight",
-    "b",
-    "a",
-    "Enter",
-  ];
   let current = 0;
 
   const navigate = useNavigate();
 
   const keyHandler = function (event) {
-    if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
+    if (PATTERN.indexOf(event.key) < 0 || event.key !== PATTERN[current]) {
       current = 0;
       return;
     }
     current++;
 
-    if (pattern.length === current) {
+    if (PATTERN.length === current) {
       current = 0;
       setMove(true);
     }
@@ -242,8 +129,17 @@ function App() {
     if (move) navigate("/arcade");
   }, [move, navigate]);
 
+  useEffect(() => {
+    if (count) {
+      console.log(count.length);
+      loadingPercent(count.length);
+    }
+    if (count.length >= 15) {
+      setTimeout(setStatus(true), 1000);
+    }
+  }, [count]);
+
   // const data = useProfileContext();
-  // console.log("data: ", data);
 
   return statusData ? (
     <motion.div
