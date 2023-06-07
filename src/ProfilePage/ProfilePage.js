@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App.css";
 import React, { useState, useEffect } from "react";
 import {
   Header,
@@ -10,13 +10,14 @@ import {
   Future,
   Projects,
   MobileMenu,
-} from "./components";
-import LoadScreen from "./components/LoadScreen";
-import sanityClient from "./client.js";
+} from "../components";
+import LoadScreen from "../components/LoadScreen";
+import sanityClient from "../client.js";
 import { motion } from "framer-motion";
-import { appVariants } from "./constants/variants";
-import { query } from "./constants/queries";
+import { appVariants } from "../constants/variants";
+import { QUERY } from "../constants/queries";
 import { useNavigate } from "react-router-dom";
+// import { useProfileContext } from "../context/ProfileContext";
 
 function App() {
   const [mainData, setMain] = useState(null);
@@ -55,7 +56,7 @@ function App() {
     const getAll = async () => {
       let count = 0;
       try {
-        const data = await sanityClient.fetch(query.profile);
+        const data = await sanityClient.fetch(QUERY.profile);
         if (data) {
           setMain(data);
           count++;
@@ -65,7 +66,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.essential);
+        const data = await sanityClient.fetch(QUERY.essential);
         if (data) {
           setEssential(data);
           count++;
@@ -75,7 +76,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.technical);
+        const data = await sanityClient.fetch(QUERY.technical);
         if (data) {
           setTechnical(data);
           count++;
@@ -85,7 +86,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.framework);
+        const data = await sanityClient.fetch(QUERY.framework);
         if (data) {
           setFramework(data);
           count++;
@@ -95,7 +96,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.library);
+        const data = await sanityClient.fetch(QUERY.library);
         if (data) {
           setLibrary(data);
           count++;
@@ -105,7 +106,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.os);
+        const data = await sanityClient.fetch(QUERY.os);
         if (data) {
           setOs(data);
           count++;
@@ -115,7 +116,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.cms);
+        const data = await sanityClient.fetch(QUERY.cms);
         if (data) {
           setCms(data);
           count++;
@@ -125,7 +126,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.design);
+        const data = await sanityClient.fetch(QUERY.design);
         if (data) {
           setDesign(data);
           count++;
@@ -135,7 +136,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.database);
+        const data = await sanityClient.fetch(QUERY.database);
         if (data) {
           setDatabase(data);
           count++;
@@ -145,7 +146,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.tools);
+        const data = await sanityClient.fetch(QUERY.tools);
         if (data) {
           setTools(data);
           count++;
@@ -155,7 +156,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.learning);
+        const data = await sanityClient.fetch(QUERY.learning);
         if (data) {
           setLearning(data);
           count++;
@@ -165,7 +166,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.future);
+        const data = await sanityClient.fetch(QUERY.future);
         if (data) {
           setFuture(data);
           count++;
@@ -175,7 +176,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.work);
+        const data = await sanityClient.fetch(QUERY.work);
         if (data) {
           setWork(data);
           count++;
@@ -185,7 +186,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.education);
+        const data = await sanityClient.fetch(QUERY.education);
         if (data) {
           setEdu(data);
           count++;
@@ -195,7 +196,7 @@ function App() {
         console.log(error);
       }
       try {
-        const data = await sanityClient.fetch(query.projects);
+        const data = await sanityClient.fetch(QUERY.projects);
         if (data) {
           setProject(data);
           count++;
@@ -248,6 +249,9 @@ function App() {
   useEffect(() => {
     if (move) navigate("/arcade");
   }, [move, navigate]);
+
+  // const data = useProfileContext();
+  // console.log("data: ", data);
 
   return statusData ? (
     <motion.div

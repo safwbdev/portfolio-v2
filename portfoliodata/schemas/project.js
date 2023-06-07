@@ -26,6 +26,10 @@ export default {
             value: "client",
             title: "Client",
           },
+          {
+            value: "game",
+            title: "Game",
+          },
         ],
       },
     },

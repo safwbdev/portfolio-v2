@@ -72,7 +72,7 @@ const profileQuery = `*[_type == "user"]{
     }         
 }`;
 
-const projectsQuery = `*[_type == "project" ] | order(projectType){
+const projectsQuery = `*[_type == "project" && projectType != "game"] | order(projectType){
     title,
     desc,
     projectType,
@@ -115,7 +115,23 @@ const workQuery = `*[_type == "work"]  | order(startDate desc){
     }
 }`;
 
-export const query = {
+const gamesQuery = `*[_type == "project" && projectType == "game"] | order(projectType){
+    title,
+    desc,
+    projectType,
+    githubLink,
+    demoLink,
+    tags,
+    projectImage{
+        asset->{
+            _id,
+            url
+        },
+        alt
+    }
+}`;
+
+export const QUERY = {
   cms: cmsQuery,
   database: databaseQuery,
   design: designQuery,
@@ -131,4 +147,5 @@ export const query = {
   technical: technicalQuery,
   tools: toolsQuery,
   work: workQuery,
+  games: gamesQuery,
 };
