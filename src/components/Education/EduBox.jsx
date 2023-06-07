@@ -1,12 +1,12 @@
 import React from "react";
-import moment from "moment";
+// import moment from "moment";
 import useStyles from "./style"
 
-function getGradDate(date) {
-  const d = new Date(date);
-  const newDate = moment(d).format("YYYY");
-  return newDate;
-}
+// function getGradDate(date) {
+//   const d = new Date(date);
+//   const newDate = moment(d).format("YYYY");
+//   return newDate;
+// }
 
 const EduBox = ({
   data: { eduImage, endDate, field, schoolName, location },
@@ -23,7 +23,8 @@ const EduBox = ({
         <div className={classes.titleWrapper}>
           <div className={classes.title}>
             <h2 className={classes.yearField}>
-              {getGradDate(endDate)} <span>|</span> {field}
+              {/* {getGradDate(endDate)} <span>|</span>  */}
+              {field}
             </h2>
             <h2 className={classes.institute}>{schoolName}</h2>
             <h2 className={classes.location}>{location}</h2>

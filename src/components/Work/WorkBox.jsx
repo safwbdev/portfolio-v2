@@ -1,14 +1,14 @@
 import React from "react";
-import moment from "moment";
+// import moment from "moment";
 import BlockContent from "@sanity/block-content-to-react";
 import Modal from "./Modal";
 import useStyles from "./style"
 
-function getWorkDate(date) {
-  const d = new Date(date);
-  const newDate = moment(d).format("MMM YYYY");
-  return newDate;
-}
+// function getWorkDate(date) {
+//   const d = new Date(date);
+//   const newDate = moment(d).format("MMM YYYY");
+//   return newDate;
+// }
 
 const WorkBox = ({
   getId,
@@ -24,7 +24,7 @@ const WorkBox = ({
     tasks,
   },
 }) => {
-  let currentStatus = endDate ? getWorkDate(endDate) : "Current";
+  // let currentStatus = endDate ? getWorkDate(endDate) : "Current";
   const classes = useStyles();
   const image = companyImage?.asset.url ? companyImage.asset.url : "https://via.placeholder.com/468x60?text=Visit+Blogging.com+Now"
 
@@ -47,7 +47,7 @@ const WorkBox = ({
             <h2 className={classes.company}>{companyName}</h2>
             <h2 className={classes.duration}>
               {/* {`${getWorkDate(startDate)} - ${getWorkDate(endDate)}`} */}
-              {`${getWorkDate(startDate)} - ${currentStatus}`}
+              {/* {`${getWorkDate(startDate)} - ${currentStatus}`} */}
             </h2>
             <h2 className={classes.location}>{location}</h2>
           </div>
