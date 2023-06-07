@@ -1,8 +1,9 @@
 import React from "react";
 import Main from "./Main";
 import About from "./About";
+import { getDownloadUrl } from "../../utils";
 
-const Intro = ({ data, getDownloadUrl }) => {
+const Intro = ({ data }) => {
   const { name, role, userImage, githubLink, desc, linkedInlink, fileUpload } = data[0];
 
   return (

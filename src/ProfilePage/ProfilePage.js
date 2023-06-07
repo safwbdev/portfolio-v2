@@ -17,6 +17,7 @@ import { motion } from "framer-motion";
 import { appVariants } from "../constants/variants";
 import { QUERY } from "../constants/queries";
 import { useNavigate } from "react-router-dom";
+
 // import { useProfileContext } from "../context/ProfileContext";
 
 function App() {
@@ -39,19 +40,11 @@ function App() {
   const [percentageData, setPercentage] = useState(0);
   const [move, setMove] = useState(false);
 
-  // console.log(query.cms);
-
-  function getDownloadUrl(ref) {
-    let formatUri = ref.replace("file-", "");
-    let convertUri = formatUri.replace("-", ".");
-    let fullUrl = `https://cdn.sanity.io/files/${process.env.REACT_APP_API_KEY}/production/${convertUri}?dl`;
-    return fullUrl;
-  }
-
   const loadingPercent = (para) => {
     let temp = (para / 15) * 100;
     setPercentage(parseInt(temp));
   };
+
   useEffect(() => {
     const getAll = async () => {
       let count = 0;
@@ -232,7 +225,6 @@ function App() {
 
   const keyHandler = function (event) {
     if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
-      console.log("A");
       current = 0;
       return;
     }
@@ -261,7 +253,7 @@ function App() {
       animate="visible"
     >
       <Header />
-      <Intro data={mainData} getDownloadUrl={getDownloadUrl} />
+      <Intro data={mainData} />
       <Projects title="Projects" data={projectData} />
       <Skills
         essential={essentialData}
@@ -277,7 +269,7 @@ function App() {
       <Future learning={learningData} future={futureData} />
       <Work data={workData} />
       <Education data={eduData} />
-      <Contact data={mainData} getDownloadUrl={getDownloadUrl} />
+      <Contact data={mainData} />
       <MobileMenu />
     </motion.div>
   ) : (

@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from "react";
-import sanityClient from "./client.js";
 import style from "./ArcadePage.module.scss";
 import Slider from "react-slick";
-import { GAME_PROJECT_SETTINGS } from "./constants/sliderSettings";
-import { QUERY } from "./constants/queries";
+import { GAME_PROJECT_SETTINGS } from "../constants/sliderSettings.js";
+import { QUERY } from "../constants/queries.js";
+import { retrieveData } from "../utils.js";
 
 const ArcadePage = () => {
   const [projectData, setProject] = useState(null);
 
-  const getAll = async (query, setData) => {
-    try {
-      const data = await sanityClient.fetch(query);
-      if (data) setData(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    getAll(QUERY.games, setProject);
+    retrieveData(QUERY.games, setProject);
   }, []);
 
   return (

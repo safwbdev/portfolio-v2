@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import ProfilePage from "./ProfilePage/ProfilePage";
+import ProfilePage from "./ProfilePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ArcadePage from "./ArcadePage";
 // import { ProfileContext } from "./context/ProfileContext";
