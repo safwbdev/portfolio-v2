@@ -41,6 +41,10 @@ function App() {
   const [move, setMove] = useState(false);
   const [count, setCount] = useState([]);
 
+  let current = 0;
+
+  const navigate = useNavigate();
+
   const loadingPercent = (para) => {
     let temp = (para / 15) * 100;
     setPercentage(parseInt(temp));
@@ -105,10 +109,6 @@ function App() {
       return null;
     });
   }, []);
-
-  let current = 0;
-
-  const navigate = useNavigate();
 
   const keyHandler = function (event) {
     if (PATTERN.indexOf(event.key) < 0 || event.key !== PATTERN[current]) {

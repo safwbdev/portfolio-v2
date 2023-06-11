@@ -1,14 +1,10 @@
-import React from "react";
-// import moment from "moment";
-import BlockContent from "@sanity/block-content-to-react";
+import React, { useEffect, useState } from "react";
+import moment from "moment";
+// import BlockContent from "@sanity/block-content-to-react";
 import Modal from "./Modal";
 import useStyles from "./style"
 
-// function getWorkDate(date) {
-//   const d = new Date(date);
-//   const newDate = moment(d).format("MMM YYYY");
-//   return newDate;
-// }
+
 
 const WorkBox = ({
   getId,
@@ -24,9 +20,24 @@ const WorkBox = ({
     tasks,
   },
 }) => {
-  // let currentStatus = endDate ? getWorkDate(endDate) : "Current";
   const classes = useStyles();
-  const image = companyImage?.asset.url ? companyImage.asset.url : "https://via.placeholder.com/468x60?text=Visit+Blogging.com+Now"
+  const [date, setDate] = useState('')
+  const image = companyImage?.asset.url ? companyImage.asset.url : "https://via.placeholder.com/468x60?text=Visit+Blogging.com+Now";
+
+  const getWorkDate = (date)=> {
+    const d = new Date(date);
+    const newDate = moment(d).format("YYYY");
+    return newDate;
+  }
+
+  useEffect(() => {
+    if (getWorkDate(startDate) === getWorkDate(endDate)){
+      setDate(getWorkDate(startDate))
+    } else{
+      setDate(`${getWorkDate(startDate)} - ${endDate ? getWorkDate(endDate) : 'Current'}`)
+    }
+  }, [startDate, endDate])
+  
 
   return (
     <div className={classes.workItem}>
@@ -46,8 +57,7 @@ const WorkBox = ({
             <h2 className={classes.role}>{role}</h2>
             <h2 className={classes.company}>{companyName}</h2>
             <h2 className={classes.duration}>
-              {/* {`${getWorkDate(startDate)} - ${getWorkDate(endDate)}`} */}
-              {/* {`${getWorkDate(startDate)} - ${currentStatus}`} */}
+              {date}
             </h2>
             <h2 className={classes.location}>{location}</h2>
           </div>
@@ -58,11 +68,11 @@ const WorkBox = ({
             <Modal id={_id} name={companyName} data={tasks} />
           ) : (
             <>
-              <BlockContent
+              {/* <BlockContent
                 blocks={tasks}
                 projectId={process.env.REACT_APP_API_KEY}
                 dataset="production"
-              />
+              /> */}
             </>
           )}
         </div>

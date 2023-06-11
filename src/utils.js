@@ -10,6 +10,7 @@ export const getDownloadUrl = (ref) => {
 export const retrieveData = async (query, setData, setCount) => {
   try {
     const data = await sanityClient.fetch(query);
+    console.log(data);
     if (data) {
       setData(data);
 

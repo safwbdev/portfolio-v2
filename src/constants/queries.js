@@ -115,7 +115,7 @@ const workQuery = `*[_type == "work"]  | order(startDate desc){
     }
 }`;
 
-const gamesQuery = `*[_type == "project" && projectType == "game"] | order(projectType){
+export const gamesQuery = `*[_type == "project" && projectType == "game"] | order(projectType){
     title,
     desc,
     projectType,
