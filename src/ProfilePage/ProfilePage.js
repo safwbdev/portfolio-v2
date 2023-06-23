@@ -7,9 +7,7 @@ import {
   Work,
   Education,
   Contact,
-  // Future,
   Projects,
-  // MobileMenu,
 } from "../components";
 import LoadScreen from "../components/LoadScreen";
 import { motion } from "framer-motion";
@@ -34,8 +32,6 @@ function App() {
   const [osData, setOs] = useState(null);
   const [toolsData, setTools] = useState(null);
   const [designData, setDesign] = useState(null);
-  const [learningData, setLearning] = useState(null);
-  const [futureData, setFuture] = useState(null);
   const [projectData, setProject] = useState(null);
   const [statusData, setStatus] = useState(false);
   const [percentageData, setPercentage] = useState(0);
@@ -71,12 +67,12 @@ function App() {
       case DATA_TYPE.FRAMEWORK:
         retrieveData(value.db, setFramework, setCount);
         break;
-      case DATA_TYPE.FUTURE:
-        retrieveData(value.db, setFuture, setCount);
-        break;
-      case DATA_TYPE.LEARNING:
-        retrieveData(value.db, setLearning, setCount);
-        break;
+      // case DATA_TYPE.FUTURE:
+      //   retrieveData(value.db, setFuture, setCount);
+      //   break;
+      // case DATA_TYPE.LEARNING:
+      //   retrieveData(value.db, setLearning, setCount);
+      //   break;
       case DATA_TYPE.LIBRARY:
         retrieveData(value.db, setLibrary, setCount);
         break;
@@ -135,7 +131,7 @@ function App() {
       console.log(count.length);
       loadingPercent(count.length);
     }
-    if (count.length >= 15) {
+    if (count.length >= 13) {
       setTimeout(setStatus(true), 1000);
     }
   }, [count]);
@@ -163,11 +159,9 @@ function App() {
         tools={toolsData}
         design={designData}
       />
-      {/* <Future learning={learningData} future={futureData} /> */}
       <Work data={workData} />
       <Education data={eduData} />
       <Contact data={mainData} />
-      {/* <MobileMenu /> */}
     </motion.div>
   ) : (
     <LoadScreen value={percentageData} />
