@@ -16,6 +16,7 @@ import { QUERY, DATA_TYPE, PATTERN } from "../constants/queries";
 import { useNavigate } from "react-router-dom";
 import { retrieveData } from "../utils";
 import style from "./ProfilePage.module.scss";
+import { PROJECT_TITLE } from "../constants/lang";
 
 // import { useProfileContext } from "../context/ProfileContext";
 
@@ -147,7 +148,7 @@ function App() {
     >
       <Header />
       <Intro data={mainData} />
-      <Projects title="Projects" data={projectData} />
+      <Projects title={PROJECT_TITLE} data={projectData} />
       <Skills
         essential={essentialData}
         technical={technicalData}

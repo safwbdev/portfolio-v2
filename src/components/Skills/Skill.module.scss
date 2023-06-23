@@ -1,18 +1,10 @@
 .skillSection{
-    // background-color: lavender;
     height: 100vh;
     display: flex; 
     justify-content: center;
     align-items: center;
     scroll-snap-align: center;
 }
-
-// .skillGrid{
-//     // border: 1px solid red;
-//      grid-template-columns:repeat(4, 1fr);
-//     grid-gap: 10px;
-//     display: grid;
-// }
 
 .skillGrid {
     grid-template-columns: repeat(3, 1fr);
@@ -23,8 +15,12 @@
     }
   }
   .skillSlider {
-    margin-bottom: 100px;
     display: none;
+    width: 100%;
+
+     & > .slick-slider{
+        width: 100%;
+    }
 
     @media screen and (max-width: 600px) {
       display: flex;
@@ -67,7 +63,6 @@
         max-width: 540px;
     }
     @media (max-width: 600px) {
-        display: block;
         padding: 0;
     }
     @media (min-width: 768px) {

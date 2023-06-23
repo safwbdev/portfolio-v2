@@ -1,6 +1,4 @@
 .aboutSection{
-
-    // background: blue;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -57,8 +55,7 @@
     h3 {
         font-size: 1.5rem;
         margin: 20px 0;
-        // text-align: center;
-        // border: 1px solid red;
+        color: #5093e5;
         
         @media screen and (max-width: 600px) {
             display: none;

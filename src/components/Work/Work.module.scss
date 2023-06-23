@@ -23,7 +23,6 @@
         max-width: 540px;
     }
     @media (max-width: 600px) {
-        display: block;
         padding: 0;
     }
     @media (min-width: 768px) {
@@ -72,7 +71,6 @@
       width: 100%;
       border-radius: 8px;
       @media (max-width: 600px) {
-        border-radius: 100%;
         width: 40%;
         margin-bottom: 20px;
       }
@@ -151,6 +149,11 @@
   .workSlider {
     margin-bottom: 100px;
     display: none;
+    width: 100%;
+
+     & > .slick-slider{
+        width: 100%;
+    }
     @media (max-width: 600px) {
       display: flex;
       & .slick-list {

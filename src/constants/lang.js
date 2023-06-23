@@ -8,11 +8,13 @@ export const PROFILE_LINKEDIN_2 = "See Me On LinkedIn";
 export const PROFILE_DOWNLOAD = "Download CV";
 export const PROFILE_CONTACT = "Let's keep in touch!";
 
-export const PROFILE_TITLE = "Well of course I know him.";
-export const PROFILE_SUBTITLE = "He's me!";
+export const PROFILE_TITLE = "About Me";
+export const PROFILE_SUBTITLE = "Hello there!";
 export const PROFILE_GREETING = "Hello there!";
 
 // PROJECTS
+export const PROJECT_TITLE = "Projects";
+export const PROJECT_SUBTITLE = PROJECT_TITLE;
 export const PROJECT_CLIENT_TITLE = "Client Portfolio";
 export const PROJECT_CLIENT_SUBTITLE =
   "* Client projects are displayed with persmission from the original owners";
@@ -24,7 +26,8 @@ export const PROJECT_GITHUB = "Github";
 export const PROJECT_DEMO = "Demo";
 
 //   SKILL
-export const SKILL_TITLE = "Skills";
+export const SKILL_TITLE = "Tools of the trade";
+export const SKILL_SUBTITLE = "Skills";
 export const SKILL_ESSENTIAL = "Essentials";
 export const SKILL_TECHNICAL = "Technical";
 export const SKILL_FRAMEWORKS = "Frameworks";
@@ -46,13 +49,15 @@ export const HEADER_EDUCATION = "Education";
 export const HEADER_CONTACT = "Contact";
 
 // WORK
-export const WORK_TITLE = "Work History";
+export const WORK_TITLE = "Places I left my mark at";
+export const WORK_SUBTITLE = "Work History";
 export const WORK_TASKS = "Tasks at";
 export const WORK_TASK_BTN = "View Tasks";
 export const WORK_CLOSE = "Close";
 
 // EDUCATION
-export const EDUCATION_TITLE = "Education";
+export const EDUCATION_TITLE = "Intelligence increased at";
+export const EDUCATION_SUBTITLE = "Education";
 
 // FUTURE
 export const FUTURE_TITLE = "Learning";

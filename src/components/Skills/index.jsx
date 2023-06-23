@@ -1,5 +1,5 @@
 import React from "react";
-import { SKILL_TITLE } from "../../constants/lang";
+import { SKILL_SUBTITLE, SKILL_TITLE } from "../../constants/lang";
 import SectionHeader from "../SectionHeader"
 import SkillDesktop from "./SkillDesktop";
 import SkillMobile from "./SkillMobile";
@@ -13,14 +13,13 @@ const Skills =( props )=> {
         {title:"Technical", data:props.technical}, 
         {title:"Frameworks", data:props.framework}, 
         {title:"Database", data:props.database},
-        // {title:"OS", data:props.os},
       ];
 
    return (
         <>
           <section className={style.skillSection} id="skills">
             <div className={style.container}>
-              <SectionHeader title={SKILL_TITLE} />
+              <SectionHeader title={SKILL_TITLE} subtitle={SKILL_SUBTITLE} />
               <SkillDesktop data={skillData} />
               <SkillMobile data={skillData} />
             </div>
