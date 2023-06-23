@@ -4,11 +4,12 @@ import { WORK_SETTINGS } from "../../constants/sliderSettings";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import WorkBox from "./WorkBox";
-import useStyles from "./style"
+import style from "./Work.module.scss";
+
 const WorkMobile = ({ data }) => {
-  const classes = useStyles();
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -16,7 +17,7 @@ const WorkMobile = ({ data }) => {
   }, [controls, inView]);
   return (
     <motion.div
-      className={classes.workSlider}
+      className={style.workSlider}
       ref={ref}
       animate={controls}
       initial="hidden"

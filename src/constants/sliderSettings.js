@@ -158,3 +158,16 @@ export const EDUCATION_SETTINGS = {
   initialSlide: 0,
   centerMode: true,
 };
+
+export const SKILL_SETTINGS = {
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  centerMode: false,
+  dots: true,
+  infinite: true,
+  initialSlide: 0,
+  slidesToScroll: 1,
+  slidesToShow: 1,
+  speed: 500,
+};

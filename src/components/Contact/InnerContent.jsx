@@ -11,10 +11,9 @@ import {
   CONTACT_DOWNLOAD,
   CONTACT_RESUME,
 } from "../../constants/lang";
-import useStyles from "./style"
+import style from "./Contact.module.scss";
 
 const InnerContent = ({ email, phone, linkedInlink, githubLink, downloadLink }) => {
-  const classes = useStyles()
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -24,7 +23,7 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink, downloadLink }) 
   }, [controls, inView]);
   return (
     <motion.div
-      className={classes.innerContent}
+      className={style.innerContent}
       ref={ref}
       animate={controls}
       initial="hidden"
@@ -33,40 +32,40 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink, downloadLink }) 
         hidden: { opacity: 0, y: 300 },
       }}
     >
-      <div className={classes.contactInfo}>
+      <div className={style.contactInfo}>
         {email && (
-          <div className={classes.contactBlock}>
-            <div className={classes.iconWrapper}>
+          <div className={style.contactBlock}>
+            <div className={style.iconWrapper}>
               <a href={`mailto:${email}`}>
                 <i className="fa fa-fw fa-envelope"></i>
               </a>
             </div>
-            <div className={classes.contactDetails}>
+            <div className={style.contactDetails}>
               <a href={`mailto:${email}`}>
-                <h5 className={classes.contactHeading}>{CONTACT_EMAIL}</h5>
+                <h5 className={style.contactHeading}>{CONTACT_EMAIL}</h5>
                 <span>{email}</span>
               </a>
             </div>
           </div>
         )}
         {phone && (
-          <div className={classes.contactBlock}>
-            <div className={classes.iconWrapper}>
+          <div className={style.contactBlock}>
+            <div className={style.iconWrapper}>
               <a href={`tel:${phone}`}>
                 <i className="fa fa-fw fa-phone"></i>
               </a>
             </div>
-            <div className={classes.contactDetails}>
+            <div className={style.contactDetails}>
               <a href={`tel:${phone}`}>
-                <h5 className={classes.contactHeading}>{CONTACT_CALL}</h5>
+                <h5 className={style.contactHeading}>{CONTACT_CALL}</h5>
                 <span>{phone}</span>
               </a>
             </div>
           </div>
         )}
         {linkedInlink && (
-          <div className={classes.contactBlock}>
-            <div className={classes.iconWrapper}>
+          <div className={style.contactBlock}>
+            <div className={style.iconWrapper}>
               <a
                 href={`${linkedInlink}`}
                 target="_blank"
@@ -75,21 +74,21 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink, downloadLink }) 
                 <i className="fab fa-fw fa-linkedin"></i>
               </a>
             </div>
-            <div className={classes.contactDetails}>
+            <div className={style.contactDetails}>
               <a
                 href={`${linkedInlink}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h5 className={classes.contactHeading}>{CONTACT_SEE}</h5>
+                <h5 className={style.contactHeading}>{CONTACT_SEE}</h5>
                 <span>{CONTACT_LINKEDIN}</span>
               </a>
             </div>
           </div>
         )}
         {githubLink && (
-          <div className={classes.contactBlock}>
-            <div className={classes.iconWrapper}>
+          <div className={style.contactBlock}>
+            <div className={style.iconWrapper}>
               <a
                 href={`${githubLink}`}
                 target="_blank"
@@ -98,21 +97,21 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink, downloadLink }) 
                 <i className="fab fa-fw fa-github"></i>
               </a>
             </div>
-            <div className={classes.contactDetails}>
+            <div className={style.contactDetails}>
               <a
                 href={`${githubLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h5 className={classes.contactHeading}>{CONTACT_CHECK}</h5>
+                <h5 className={style.contactHeading}>{CONTACT_CHECK}</h5>
                 <span>{CONTACT_GITHUB}</span>
               </a>
             </div>
           </div>
         )}
         {downloadLink && (
-          <div className={classes.downloadBlock}>
-            <div className={classes.iconWrapper}>
+          <div className={style.downloadBlock}>
+            <div className={style.iconWrapper}>
               <a
                 href={`${downloadLink}`}
                 target="_blank"
@@ -121,13 +120,13 @@ const InnerContent = ({ email, phone, linkedInlink, githubLink, downloadLink }) 
                 <i class="fas fa-fw fa-file-download"></i>
               </a>
             </div>
-            <div className={classes.contactDetails}>
+            <div className={style.contactDetails}>
               <a
                 href={`${downloadLink}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h5 className={classes.contactHeading}>{CONTACT_DOWNLOAD}</h5>
+                <h5 className={style.contactHeading}>{CONTACT_DOWNLOAD}</h5>
                 <span>{CONTACT_RESUME}</span>
               </a>
             </div>

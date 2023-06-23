@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import React from "react";
 import ProfilePage from "./ProfilePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

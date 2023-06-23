@@ -1,33 +1,28 @@
 import React from "react";
 import { SKILL_TITLE } from "../../constants/lang";
-import SkillSection from "./SkillSection";
 import SectionHeader from "../SectionHeader"
-import useStyles from "./style"
+import SkillDesktop from "./SkillDesktop";
+import SkillMobile from "./SkillMobile";
+import style from "./Skill.module.scss";
 
-const Skills =({essential, technical, framework, library,
-    database,
-    cms,
-    os,
-    tools,
-    design})=> {
-      const classes = useStyles()
+const Skills =( props )=> {
+      const skillData = [
+        {title:"Essentials", data:props.essential}, 
+        {title:"UI Libraries", data:props.library},
+        {title:"Tools", data:props.tools},
+        {title:"Technical", data:props.technical}, 
+        {title:"Frameworks", data:props.framework}, 
+        {title:"Database", data:props.database},
+        // {title:"OS", data:props.os},
+      ];
 
    return (
         <>
-          <section className={classes.skillSection} id="skills">
-            <div className="container">
+          <section className={style.skillSection} id="skills">
+            <div className={style.container}>
               <SectionHeader title={SKILL_TITLE} />
-              <div className="skill-section">
-              { essential &&  (<SkillSection title="Essentials" data={essential} />)}
-              { technical &&  (<SkillSection title="Technical" data={technical} />)}
-              { framework &&  (<SkillSection title="Frameworks" data={framework} />)}
-              { library &&  (<SkillSection title="UI Libraries" data={library} />)}
-              { database &&  (<SkillSection title="Database" data={database} />)}
-              { cms &&  (<SkillSection title="Content Mangement Systems" data={cms} />)}
-              { os &&  (<SkillSection title="OS" data={os} />)}
-              { tools &&  (<SkillSection title="Tools" data={tools} />)}
-              { design &&  (<SkillSection title="Design" data={design} />)}
-              </div>
+              <SkillDesktop data={skillData} />
+              <SkillMobile data={skillData} />
             </div>
           </section>
         </>

@@ -6,27 +6,25 @@ import {
   socialVariants1,
 } from "../../constants/variants";
 import { motion } from "framer-motion";
-import useStyles from "./style";
+import style from "./Main.module.scss";
 
 const Main = ({ name, role, githubLink, linkedInlink }) => {
 
-  const classes = useStyles()
   return (
-    <section className={classes.hero}>
-      <div className={classes.innerText}>
-        <motion.h1 variants={titleVariants} initial="hidden" animate="visible" className={classes.title}>
+    <section className={style.hero}>
+      <div className={style.innerText}>
+        <motion.h1 variants={titleVariants} initial="hidden" animate="visible">
           {name}
         </motion.h1>
         <motion.h2
           variants={subTitleVariants}
           initial="hidden"
           animate="visible"
-          className={classes.subtitle}
         >
           {role}
         </motion.h2>
       </div>
-      <div className="scroll-down">
+      <div className={style.scrollDown}>
         <a href="#about">
           <span></span>
         </a>

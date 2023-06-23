@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { PERSONAL_PROJECT_SETTINGS } from "../../constants/sliderSettings";
-import ProjectBox from "./ProjectBox";
-import style from "./Projects.module.scss";
+import { SKILL_SETTINGS } from "../../constants/sliderSettings";
+// import ProjectBox from "./ProjectBox";
+import SkillSection from "./SkillSection";
+import style from "./Skill.module.scss";
 
-const ProjectSlider = ({ data }) => {
+const SkillMobile = ({ data }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -14,25 +15,27 @@ const ProjectSlider = ({ data }) => {
       controls.start("visible");
     }
   }, [controls, inView]);
+
+  console.log(data);
   return (
     <motion.div
       ref={ref}
       animate={controls}
-      className={style.projectSlider}
       initial="hidden"
       variants={{
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: 300 },
       }}
+      className={style.skillSlider}
     >
-      <Slider {...PERSONAL_PROJECT_SETTINGS}>
+      <Slider {...SKILL_SETTINGS}>
         {data &&
-          data.map((project, index) => {
-            return <ProjectBox key={index} data={project} />;
+          data.map(({title, data}, index) => {
+            return <SkillSection key={index} data={data} title={title} />;
           })}
       </Slider>
     </motion.div>
   );
 };
 
-export default ProjectSlider;
+export default SkillMobile;

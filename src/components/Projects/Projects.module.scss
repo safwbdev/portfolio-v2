@@ -1,0 +1,147 @@
+.projectSection{
+    // background: rgb(151, 226, 147);
+    scroll-snap-align: center;
+    height: 100vh;
+}
+
+.projectSlider{
+    display: flex;
+    width: 100%;
+    & > .slick-slider{
+        width: 100%;
+    }
+}
+
+
+.portfolioItem {
+    padding: 10px;
+}
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+}
+
+  .imageWrapperClient {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:before {
+      content: "Client*";
+      position: absolute;
+      background: #5093e5;
+      padding: 5px 10px;
+      left: 0;
+      z-index: 10;
+      top: 10px;
+      width: 30%;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .titleWrapper {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .linkWrapperOne {
+    align-items: center;
+    justify-content: space-between;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .linkWrapperTwo {
+    align-items: center;
+    justify-content: space-between;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .link {
+    background: #5093e5;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .descWrapper {
+    margin-bottom: 1em;
+  }
+  .stackWrapper {
+    display: block;
+    height: 4.2em;
+    padding-bottom: 10px;
+  }
+  .stack {
+    border: 1px solid #ffffff;
+    padding: 5px;
+    margin: 2px;
+    display: inline-flex;
+    font-size: 0.8em;
+    border-radius: 8px;
+  }
+
+  .tnc {
+    margin-top: 3em;
+    text-align: center;
+  }
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  
+    @media (min-width: 568px) {
+        max-width: 540px;
+    }
+    @media (max-width: 600px) {
+        display: block;
+        padding: 0;
+    }
+    @media (min-width: 768px) {
+      max-width: 720px;
+    }
+    @media (min-width: 992px) {
+      max-width: 960px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 1170px;
+    }
+  }

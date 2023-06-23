@@ -1,0 +1,155 @@
+.eduSection{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    
+    & .container {
+        padding: 0
+    }
+    & h4 {
+        font-size: 1rem;
+          color: #5093e5;
+          font-weight: 400;
+          @media screen and (min-width: 600px) {
+            font-size: "1.5rem",
+          }
+        }
+      
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    @media (min-width: 568px) {
+        max-width: 540px;
+    }
+    @media (max-width: 600px) {
+        display: block;
+        padding: 0;
+    }
+    @media (min-width: 768px) {
+      max-width: 720px;
+    }
+    @media (min-width: 992px) {
+      max-width: 960px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 1170px;
+    }
+  }
+
+.eduGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    display: grid;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+
+
+.eduSlider {
+    margin-bottom: 100px;
+    display: none;
+
+    @media screen and (max-width: 600px) {
+      display: flex;
+    }
+    & .slick-list {
+        @media screen and (max-width: 600px) {
+        display: flex;
+      }
+    }
+    & .slick-track {
+        @media screen and (max-width: 600px) {
+        display: flex;
+      }
+    }
+    & .slick-slide {
+      border: 1px solid #5093e5;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    & .slick-slide > div {
+      display: flex;
+      justify-content: center;
+    }
+}
+
+.eduItem {
+    padding: 10px;
+    display: flex;
+    display: inline-block
+  }
+
+  .imageSide {
+    position: relative;
+      flex: unset;
+      align-items: center;
+      justify-content: center;
+      max-width: unset;
+      width: 100%;
+      text-align: center;
+    
+    & img {
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 40%;
+    }
+  }
+  .detailSide {
+    position: relative;
+    width: 100%;
+      flex: unset;
+      max-width: unset;
+  }
+  .titleWrapper {
+    align-items: center;
+      display: block;
+      padding: 0;
+      text-align: center;
+      height: unset;
+
+  }
+  .title {
+    & h2 {
+      margin-bottom: 5px;
+    }
+  }
+  .yearField {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    @media screen and (max-width: 600px) {
+      font-size: 1.3em;
+    }
+
+    & span {
+      color: #5093e5;
+    }
+  }
+
+  .institute {
+    color: #5093e5;
+
+      font-size: 1.1em;
+  }
+  .company {
+    color: #5093e5;
+    font-size: 1em;
+  }
+  .location {
+    color: #ffffff;
+    font-size: 1em;
+  }

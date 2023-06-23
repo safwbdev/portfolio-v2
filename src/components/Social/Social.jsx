@@ -1,32 +1,26 @@
 import React from "react";
-import useStyles from "./style";
+import { FBICON, GHICON, INICON, LIICON, TWICON } from "../../constants/icons";
+import style from "./Social.module.scss";
 
-const Social = ({ github,
-    linkedin, isHero }) => {
-  
-      const classes = useStyles();
+const Social = ({ github, linkedin, isHero }) => {
 
-      const clastest = isHero ? classes.socialIconsHero : classes.socialIcons;
+  const clastest = isHero ? style.socialIconsHero : style.socialIcons;
 
   const socialLinks = [
-    { icon: "fab fa-facebook-f", url: null },
-
-    { icon: "fab fa-twitter", url: null },
-
-    { icon: "fab fa-instagram", url: null },
-
-    { icon: "fab fa-linkedin", url: linkedin },
-
-    { icon: "fab fa-github", url: github },
+    { icon: FBICON, url: null },
+    { icon: TWICON, url: null },
+    { icon: INICON, url: null },
+    { icon: LIICON, url: linkedin },
+    { icon: GHICON, url: github },
   ];
   return (
     <div className={clastest}>
-      <ul className={classes.socialList}>
+      <ul className={style.socialList}>
         {socialLinks &&
           socialLinks.map(({ url, icon }, index) => {
             if (url) {
               return (
-                <li className={classes.socialListItem} key={index}>
+                <li className={style.socialListItem} key={index}>
                   <a href={url} target="_blank" rel="noopener noreferrer">
                     <i className={icon}></i>
                   </a>

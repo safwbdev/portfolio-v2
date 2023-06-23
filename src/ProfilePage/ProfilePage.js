@@ -7,9 +7,9 @@ import {
   Work,
   Education,
   Contact,
-  Future,
+  // Future,
   Projects,
-  MobileMenu,
+  // MobileMenu,
 } from "../components";
 import LoadScreen from "../components/LoadScreen";
 import { motion } from "framer-motion";
@@ -17,6 +17,7 @@ import { appVariants } from "../constants/variants";
 import { QUERY, DATA_TYPE, PATTERN } from "../constants/queries";
 import { useNavigate } from "react-router-dom";
 import { retrieveData } from "../utils";
+import style from "./ProfilePage.module.scss";
 
 // import { useProfileContext } from "../context/ProfileContext";
 
@@ -143,7 +144,7 @@ function App() {
 
   return statusData ? (
     <motion.div
-      className="App"
+      className={style.App}
       variants={appVariants}
       initial="hidden"
       animate="visible"
@@ -162,11 +163,11 @@ function App() {
         tools={toolsData}
         design={designData}
       />
-      <Future learning={learningData} future={futureData} />
+      {/* <Future learning={learningData} future={futureData} /> */}
       <Work data={workData} />
       <Education data={eduData} />
       <Contact data={mainData} />
-      <MobileMenu />
+      {/* <MobileMenu /> */}
     </motion.div>
   ) : (
     <LoadScreen value={percentageData} />

@@ -3,21 +3,15 @@ import SectionHeader from "../SectionHeader";
 import EduDesktop from "./EduDesktop";
 import EduMobile from "./EduMobile";
 import { EDUCATION_TITLE } from "../../constants/lang";
-import useStyles from "./style"
+import style from "./Edu.module.scss";
 
-const Index = ({ data }) => {
-  const classes = useStyles();
-  return (
-    <>
-
-      <div className={classes.eduSection} id="education">
-        <div className="container">
+const Index = ({ data }) => (
+      <div className={style.eduSection} id="education">
+        <div className={style.container}>
           <SectionHeader title={EDUCATION_TITLE} />
           <EduDesktop data={data} />
           <EduMobile data={data} />
         </div>
       </div>
-    </>
   );
-};
 export default Index;

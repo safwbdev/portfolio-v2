@@ -1,0 +1,134 @@
+.hero{
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: center;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(0deg, #3b3b3b, #c5c5c5), 
+    linear-gradient(
+        45deg,
+        #9f74d6 0%,
+        #9f74d6 25%,
+        #825fad 25%,
+        #825fad 45%,
+        #654a84 45%,
+        #654a84 50%,
+        #48365a 50%,
+        #48365a 52%,
+        #2b2131 52%,
+        #2b2131 61%,
+        #0e0c08 61%,
+        #0e0c08 100%
+      ),
+      linear-gradient(
+        135deg,
+        #9f74d6 0%,
+        #9f74d6 25%,
+        #825fad 25%,
+        #825fad 45%,
+        #654a84 45%,
+        #654a84 50%,
+        #48365a 50%,
+        #48365a 52%,
+        #2b2131 52%,
+        #2b2131 61%,
+        #0e0c08 61%,
+        #0e0c08 100%
+      );
+    background-blend-mode: overlay, overlay, normal,
+
+}
+
+.innerText {
+    text-align: center;
+    h1 {
+        @media screen and (min-width: 600px) {
+            font-size: 5rem;
+        }
+        @media screen and (max-width: 600px) {
+            font-size: 2.5rem;
+            margin-bottom: 0.5em;
+        }
+    }
+      h2 {
+        font-weight: 400;
+        @media screen and (min-width: 600px) {
+            font-size: 2rem;
+        }
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+        }
+      }
+  }
+
+  .scrollDown {
+    display: none;
+    a {
+        padding-top: 60px;
+        
+        span {
+          position: absolute;
+          bottom: 10em;
+          left: 50%;
+          width: 30px;
+          height: 50px;
+          margin-left: -15px;
+          border: 2px solid #fff;
+          border-radius: 50px;
+          box-sizing: border-box;
+          
+          &::before {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            content: "";
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            background-color: #fff;
+            border-radius: 100%;
+            -webkit-animation: sdb10 2s infinite;
+            animation: sdb10 2s infinite;
+            box-sizing: border-box;
+          }
+        }
+    }
+}
+  @-webkit-keyframes sdb10 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      -webkit-transform: translate(0, 20px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes sdb10 {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      transform: translate(0, 20px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+  

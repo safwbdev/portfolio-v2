@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 // import BlockContent from "@sanity/block-content-to-react";
-import Modal from "./Modal";
-import useStyles from "./style"
+// import Modal from "./Modal";
+import style from "./Work.module.scss";
 
 
 
@@ -20,7 +20,7 @@ const WorkBox = ({
     tasks,
   },
 }) => {
-  const classes = useStyles();
+
   const [date, setDate] = useState('')
   const image = companyImage?.asset.url ? companyImage.asset.url : "https://via.placeholder.com/468x60?text=Visit+Blogging.com+Now";
 
@@ -40,8 +40,8 @@ const WorkBox = ({
   
 
   return (
-    <div className={classes.workItem}>
-      <div className={classes.imageSide}>
+    <div className={style.workItem}>
+      <div className={style.imageSide}>
         <div className="image-wrapper">
           <img
             src={image}
@@ -51,31 +51,31 @@ const WorkBox = ({
           />
         </div>
       </div>
-      <div className={classes.detailSide}>
-        <div className={classes.titleWrapper}>
-          <div className={classes.title}>
-            <h2 className={classes.role}>{role}</h2>
-            <h2 className={classes.company}>{companyName}</h2>
-            <h2 className={classes.duration}>
+      <div className={style.detailSide}>
+        <div className={style.titleWrapper}>
+          <div className={style.title}>
+            <h2 className={style.role}>{role}</h2>
+            <h2 className={style.company}>{companyName}</h2>
+            <h2 className={style.duration}>
               {date}
             </h2>
-            <h2 className={classes.location}>{location}</h2>
+            <h2 className={style.location}>{location}</h2>
           </div>
         </div>
 
-        <div className={classes.taskWrapper}>
+        {/*  <div className={style.taskWrapper}>
           {isSlider ? (
             <Modal id={_id} name={companyName} data={tasks} />
           ) : (
             <>
-              {/* <BlockContent
+             <BlockContent
                 blocks={tasks}
                 projectId={process.env.REACT_APP_API_KEY}
                 dataset="production"
-              /> */}
+              /> 
             </>
-          )}
         </div>
+          )}*/}
       </div>
     </div>
   );

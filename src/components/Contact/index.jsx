@@ -2,16 +2,14 @@ import React from "react";
 import SectionHeader from "../SectionHeader";
 import InnerContent from "./InnerContent";
 import { CONTACT_SUBTITLE, CONTACT_TITLE } from "../../constants/lang";
-import useStyles from "./style"
 import { getDownloadUrl } from "../../utils";
+import style from "./Contact.module.scss";
 
 const Contact = ({ data }) => {
-
-  const classes = useStyles()
   const { email, phone, linkedInlink, githubLink, fileUpload } = data[0];
 
   return (
-    <div className={classes.contactSection} id="contact">
+    <div className={style.contactSection} id="contact">
       <div className="container">
         <SectionHeader title={CONTACT_TITLE} subtitle={CONTACT_SUBTITLE} />
         <InnerContent

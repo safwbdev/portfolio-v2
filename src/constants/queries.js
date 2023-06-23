@@ -72,7 +72,8 @@ const profileQuery = `*[_type == "user"]{
     }         
 }`;
 
-const projectsQuery = `*[_type == "project" && projectType != "game"] | order(projectType){
+// const projectsQuery = `*[_type == "project" && projectType != "game" ] | order(projectType){
+const projectsQuery = `*[_type == "project" && projectType == "personal" ] | order(projectType){
     title,
     desc,
     projectType,
