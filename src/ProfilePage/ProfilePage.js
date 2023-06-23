@@ -68,12 +68,6 @@ function App() {
       case DATA_TYPE.FRAMEWORK:
         retrieveData(value.db, setFramework, setCount);
         break;
-      // case DATA_TYPE.FUTURE:
-      //   retrieveData(value.db, setFuture, setCount);
-      //   break;
-      // case DATA_TYPE.LEARNING:
-      //   retrieveData(value.db, setLearning, setCount);
-      //   break;
       case DATA_TYPE.LIBRARY:
         retrieveData(value.db, setLibrary, setCount);
         break;
